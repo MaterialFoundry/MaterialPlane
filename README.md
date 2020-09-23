@@ -60,7 +60,17 @@ The calibrated coordinates can then be mirrored or rotated to correspond with th
 Foundry then searches for tokens that are close enough to these coordinates, selects the right token, and moves the token so it follows the physical mini.
 
 # Usage
-Once everything has been set up (see below), the module is simple to use.<br>
+
+Please make sure you've done the following:<br>
+<ul>
+<li>Got all the components for the sensor module: <a href="https://github.com/CDeenen/MaterialPlane#ir-sensor-module">minimal</a> or <a href="https://github.com/CDeenen/MaterialPlane/tree/master/3D%20Models#full-sensor">full sensor</a></li>
+<li>Build the enclosure, or some other way to mount the sensor: <a href="https://github.com/CDeenen/MaterialPlane/tree/master/3D%20Models#sensor-mount">minimal</a> or <a href="https://github.com/CDeenen/MaterialPlane/tree/master/3D%20Models#build-instructions-1">full sensor</a></li>
+<li>Installed the <a href="https://github.com/CDeenen/MaterialPlane/tree/master/Arduino#arduino-code">Arduino code</a></li>
+<li>Made one or more <a href="https://github.com/CDeenen/MaterialPlane/tree/master/3D%20Models#ir-bases">IR bases</a></li>
+<li>Installed the Foundry module</li>
+</ul>
+
+Once everything has been set up in foundry (see below), the module is simple to use.<br>
 For each mini that you want to track, you need an IR base. Simple place the mini on top, making sure that the LED is always oriented in the same way (the same way you did when calibrating, see below). Simply press the switch on the base, move the mini to its new location, and release the switch.
 
 ## Module Settings

@@ -1,0 +1,130 @@
+<form autocomplete="off" onsubmit="event.preventDefault()">
+    
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        canvas {
+            border: 2px solid rgb(151, 149, 149);
+        }
+    </style>
+    <script>
+
+        //Drawing IR point canvas
+        var stage = document.getElementById('stage');
+        if(stage.getContext) {
+            var ctx = stage.getContext('2d');
+        }
+        ctx.fillStyle = '#FF0000';
+        
+        if ({{x0}} > 0 && {{x0}} > 0) {
+            ctx.beginPath();
+            ctx.arc({{x0}}/1023*250,{{y0}}/1023*250,3,0,2*Math.PI,false);
+            ctx.fill();
+        }
+        if ({{x1}} > 0 && {{x1}} > 0) {
+            ctx.beginPath();
+            ctx.arc({{x1}}/1023*250,{{y1}}/1023*250,3,0,2*Math.PI,false);
+            ctx.fill();
+        }
+        if ({{x2}} > 0 && {{x2}} > 0) {
+            ctx.beginPath();
+            ctx.arc({{x2}}/1023*250,{{y2}}/1023*250,3,0,2*Math.PI,false);
+            ctx.fill();
+        }
+        if ({{x3}} > 0 && {{x3}} > 0) {
+            ctx.beginPath();
+            ctx.arc({{x3}}/1023*250,{{y3}}/1023*250,3,0,2*Math.PI,false);
+            ctx.fill();
+        }
+    </script>
+    </head>
+    <h2>Coordinates</h2>
+     <div class="form-group options">
+        <body>     
+            <table style="float:right; width:10%">
+            <tr>
+                <th>Point</th>
+                <th>X</th>
+                <th>Y</th> 
+                <th>Intensity</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>{{x0}}</td>
+                <td>{{y0}}</td>
+                <td>{{i0}}</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>{{x1}}</td>
+                <td>{{y1}}</td>
+                <td>{{i1}}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{x2}}</td>
+                <td>{{y2}}</td>
+                <td>{{i2}}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{x3}}</td>
+                <td>{{y3}}</td>
+                <td>{{i3}}</td>
+            </tr>
+            </table>
+
+            <canvas id="stage" height="250" width="250"></canvas>
+	</div>
+
+
+    <h2>Settings</h2>
+
+    <div class="form-group options" title="MirrorX">
+        <label>Mirror X</label>
+        <input type="checkbox" name="mirX" {{checked mirrorX}}>
+    </div>
+    <div class="form-group options" title="MirrorY">
+        <label>Mirror Y</label>
+        <input type="checkbox" name="mirY" {{checked mirrorY}}>
+    </div>
+    <div class="form-group options" title="Rot">
+        <label>Rotation</label>
+        <input type="checkbox" name="rot" {{checked rotation}}>
+    </div>
+    <div class="slidecontainer">
+        <label>Sensitivity</label>
+        <input type="range" min="150" max="255" value={{sens}} class="slider" id="myRange" name="sens">
+      </div>
+    <h2>Calibration</h2>  
+    <div class="form-group">
+        <label for="calEn">Calibrated</label>
+        <input type="radio" name="calEn" 
+        {{checked calEn}}>
+
+        <button name="disableCalBtn" type="button">
+            <i></i> Disable Calibration
+        </button>
+    </div>
+
+    <div class="form-group">
+        <label for="CalibrationMethod">Cal method:</label>
+        <select name="calMethod" id="action">
+            <option value="SinglePoint">Single Point</option>
+            <option value="Multipoint">Multipoint</option>
+        </select> 
+
+
+        <button name="calBtn" type="button">
+            <i></i> Calibrate
+        </button>
+    </div>
+   
+
+    <button type="submit" name="submit">
+        Exit
+    </button>
+</form>
+

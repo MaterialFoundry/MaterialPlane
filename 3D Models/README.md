@@ -15,7 +15,7 @@ This is a collection of bases onto which you can place or glue your minis. They 
 1x Microswitch<br>
 1x Felt that's big enough to cover the bottom of the base<br>
 Soldering iron<br>
-Solder<br><br>
+Solder<br>
 Wire cutter<br>
 Superglue<br>
 
@@ -83,6 +83,8 @@ If on USB power:<br>
 <li>1x switch</li>
 <li>1x Li-Po battery (max size: 35x53x11mm)</li>
 <li>9x M3x8mm countersunk bolts</li>
+<li>1x M5x22mm bolt</li>
+<li>1x M5 nut</li>
 </li>
 
 ## Sourcing parts
@@ -146,7 +148,7 @@ Yellow to pin 21<br>
 
 <img src="https://github.com/CDeenen/MaterialPlane/blob/master/3D%20Models/img/LEDWiring.jpg" width="500">
 
-<b>7.</b> Solder the red and green wires to the TinyPICO:
+<b>7.</b> Solder the red and green wires to the TinyPICO:<br>
 LED1 red wire to pin 25<br>
 LED1 green wire to pin 26<br>
 LED2 red wire to pin 27<br>

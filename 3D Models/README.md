@@ -103,7 +103,7 @@ Gotronic: https://www.gotronic.fr/art-camera-ir-de-positionnement-sen0158-22705.
 <br>
 <b>TinyPICO</b><br>
 Adafruit: https://www.adafruit.com/product/4335 <br>
-Core Electronics: https://www.adafruit.com/product/4335 <br>
+Core Electronics: https://core-electronics.com.au/tinypico-esp32-development-board.html <br>
 Tinytronics: https://www.tinytronics.nl/shop/nl/communicatie/bluetooth/tinypico-esp32-pico-d4-wifi-en-bluetooth-board <br>
 <br>
 <b>Battery</b><br>

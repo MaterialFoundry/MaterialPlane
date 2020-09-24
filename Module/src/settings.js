@@ -96,18 +96,6 @@ console.log(MODULE.moduleName);
         onChange: x => window.location.reload()
     });
 
-
-    game.settings.registerMenu(MODULE.moduleName, 'calibrationMenu',{
-        name: "Calibration Menu",
-        label: "Calibration Menu",
-        icon: "fas fa-cog",
-        type: calibrationForm,
-        restricted: true
-    })
-
-
-
-
     //invisible settings
     game.settings.register(MODULE.moduleName,'menuOpen', {
         name: "Menu Open",

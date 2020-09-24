@@ -126,7 +126,7 @@ void sendData() {
 
   char msg[200];
   sprintf(msg,"{\"V\":%d,\"H\":%d,\"O\":%d,\"MX\":%d,\"MY\":%d,\"R\":%d,\"S\":%d",pointsVisible,homography,offsetOn,mirrorX,mirrorY,rotation,sensitivity);
-  #ifdef COMPLETE_SENSOR
+  #ifdef FULL_SENSOR
     sprintf(msg+strlen(msg),",\"B\":%.2f,\"BS\":%d",tp.GetBatteryVoltage(),batteryState);
   #endif
   for(i=0; i<4; i++)

@@ -45,7 +45,7 @@ There are many different ESP32 variations available, most of them should work. W
 </ul>
 If you want to use the <a href="https://github.com/CDeenen/MaterialPlane/tree/master/3D%20Models/Sensor%20Enclosure">enclosure</a>, you will need an Adafruit TinyPICO. Sources:<br>
 Adafruit: https://www.adafruit.com/product/4335 <br>
-Core Electronics: https://www.adafruit.com/product/4335 <br>
+Core Electronics: https://core-electronics.com.au/tinypico-esp32-development-board.html <br>
 Tinytronics: https://www.tinytronics.nl/shop/nl/communicatie/bluetooth/tinypico-esp32-pico-d4-wifi-en-bluetooth-board <br>
 
 If you're not planning to use the enclosure, you can choose between many different modules. If you're unsure on what to get, get a TinyPICO, Node32 or Wemos LOLIN32.<br>

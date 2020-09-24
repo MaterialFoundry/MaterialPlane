@@ -104,7 +104,7 @@ Gotronic: https://www.gotronic.fr/art-camera-ir-de-positionnement-sen0158-22705.
 <b>TinyPICO</b><br>
 Adafruit: https://www.adafruit.com/product/4335 <br>
 Core Electronics: https://core-electronics.com.au/tinypico-esp32-development-board.html <br>
-Tinytronics: https://www.tinytronics.nl/shop/nl/communicatie/bluetooth/tinypico-esp32-pico-d4-wifi-en-bluetooth-board <br>
+Tinytronics: https://www.tinytronics.nl/shop/en/communication/bluetooth/tinypico-esp32-pico-d4-wifi-and-bluetooth-board <br>
 <br>
 <b>Battery</b><br>
 Must be 35x53x11mm or smaller. You can get batteries with capacities of up to 2000mAh within that size, such as:<br>

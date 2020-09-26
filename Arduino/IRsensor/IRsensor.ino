@@ -1,15 +1,15 @@
-#define DEBUG false
-
 #include <Arduino.h>
-#include <MatrixMath.h>
-#include <math.h>
 #include <EEPROM.h>
 #include <Wire.h>
 #include <WiFi.h>
 #include <WiFiMulti.h>
 #include <WiFiClientSecure.h>
-#include <WebSocketsServer.h>
+#include "src/WebSocketsServer/src/WebSocketsServer.h"
+#include "src/homography/homography.h"
 
+/*****************************************************************************************************************
+ * User settings
+ *****************************************************************************************************************/
 //Fill in your SSID and password
 #define SSID  "Your SSID"
 #define PASS  "Your Password"
@@ -17,14 +17,22 @@
 //If using the complete sensor unit, leave this, otherwise comment it out (place // before the line)
 #define FULL_SENSOR
 
+/*****************************************************************************************************************
+ * End of user settings
+ *****************************************************************************************************************/
 
+#define DEBUG false
 
+//I2C message size
 #define MSGSIZE 40
+
+//I2C address
+#define IR_ADDRESS 0x58
 
 //If the complete sensor is used, add libraries and define stuff
 #ifdef FULL_SENSOR
-  #include <TinyPICO.h>
-  #include <analogWrite.h>
+  #include "src/TinyPICO_Helper_Library/src/TinyPICO.h"
+  #include "src/ESP32_AnalogWrite/analogWrite.h"
   #define LED_R_G 25
   #define LED_R_R 26
   #define LED_L_G 27
@@ -32,51 +40,35 @@
   #define USB_CHECK_PIN 32
   #define LED_R_BRIGHTNESS 7
   #define LED_G_BRIGHTNESS 255
-  #define BAT_WARNING_VOLTAGE 3.9
+  #define BAT_WARNING_VOLTAGE 3.6
   TinyPICO tp = TinyPICO();
   bool chargeLedOld = false;
   uint16_t chargeCounter = 0;
   uint16_t chargeSum = 0;
-  unsigned long batteryTimer = 0;
-  int batteryState = 0;
+  uint32_t batteryTimer = 0;
+  uint8_t batteryState = 0;
 #endif
 
 WiFiMulti WiFiMulti;
 WebSocketsServer webSocket = WebSocketsServer(81);
+homography cal;
+homography offset;
 
-String data = "";
-int IRsensorAddress = 0xB0;
-int slaveAddress;
-int ledPin = 13;
-boolean ledState = false;
-byte data_buf[MSGSIZE];
-int i;
-int Ix[4], Iy[4], Ii[4],spotSize[4];
-uint16_t cal[2][4];
-uint16_t bounds[2][4] ={0,0,1023,1023,
-                        1023,0,0,1023};
-
-uint16_t offset[2][4]; 
-uint16_t checkSum = 0;
+int16_t Ix[4], Iy[4], Ii[4],spotSize[4];
 uint16_t checkSumOld = 0;
-unsigned long ledTimer = 0;
-unsigned long serialTimer = 0;
-unsigned long pollingTimer = 0;
-uint8_t sensitivity = 127;
+uint32_t ledTimer = 0;
+uint32_t serialTimer = 0;
+uint32_t pollingTimer = 0;
+uint8_t sensitivity = 3;
 bool homography = false;
 bool mirrorX = false;
 bool mirrorY = false;
 bool rotation = false;
 bool offsetOn = false;
 uint8_t pointsVisible = 0;
-mtx_type H[3][3];
-mtx_type HO[3][3];
 bool stopCal = false;
-unsigned long millisOld = 0;
-int debounceCounter = 0;
-
-
-
+uint32_t millisOld = 0;
+uint8_t debounceCounter = 0;
 
 #ifdef FULL_SENSOR
   /**
@@ -126,13 +118,6 @@ int debounceCounter = 0;
   }
 #endif
 
-void Write_2bytes(byte d1, byte d2)
-{
-    Wire.beginTransmission(slaveAddress);
-    Wire.write(d1); Wire.write(d2);
-    Wire.endTransmission();
-}
-
 void setup() {
   Serial.begin(115200);
   Serial.setDebugOutput(DEBUG);
@@ -160,20 +145,12 @@ void setup() {
 
   EEPROM.begin(200);
   startupEEPROM();
-  Wire.begin();
-
-  slaveAddress = IRsensorAddress >> 1;   // This results in 0x21 as the address to pass to TWI
-  // IR sensor initialize
-  Write_2bytes(0x30,0x01); delay(10);
-  setSensitivity(sensitivity);
-  Write_2bytes(0x33,0x05); delay(10);
- 
+  
+  initializeIR();
+  
+  //Initialize wifi and websocket
   WiFiMulti.addAP(SSID,PASS);
-
-  while(WiFiMulti.run() != WL_CONNECTED) {
-      delay(100);
-  }
-
+  while(WiFiMulti.run() != WL_CONNECTED) delay(100);
   webSocket.begin();
   webSocket.onEvent(webSocketEvent);
 
@@ -189,9 +166,9 @@ void loop() {
   webSocket.loop();
     
   if (Serial.available() > 0) {
-    int result = checkSerial(); 
-    if (result == 1) if (DEBUG) Serial.println("OK");
-    else if (result == 0) if (DEBUG) Serial.println("ERROR"); 
+    bool result = checkSerial(); 
+    if (result == true) if (DEBUG) Serial.println("OK");
+    else if (result == false) if (DEBUG) Serial.println("ERROR"); 
   }
 
 #ifdef FULL_SENSOR
@@ -225,20 +202,16 @@ void loop() {
       pollingTimer = millis();
     }
   else if (millis() - pollingTimer > 25){
-    
-
     readSensor();
-
+    
     if (pointsVisible == 0) 
       if (debounceCounter < 25) {
         debounceCounter++;
         return;
       }
     debounceCounter = 0;
-    
-    //checkSum = 0;
-    checkSum = Ix[0] + Iy[0];
-    //else for (int i=0; i<4; i++) checkSum += Ix[i] + Iy[i] + Ii[i];
+
+    uint16_t checkSum = Ix[0] + Iy[0];
     if (checkSum != checkSumOld) {
       checkSumOld = checkSum;
       if (DEBUG) Serial.print(millis() - millisOld);
@@ -248,6 +221,4 @@ void loop() {
       pollingTimer = millis();
     }
   }
-    
-  
 }

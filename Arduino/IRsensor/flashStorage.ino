@@ -18,24 +18,24 @@ void writeEEPROM(uint8_t addr, uint16_t data){
 void storeCal(){
   for (int i=0; i<2; i++)
     for (int j=0; j<4; j++)
-      writeEEPROM(CAL_ADDR+2*j+8*i, cal[i][j]);
+      writeEEPROM(CAL_ADDR+2*j+8*i, cal.getCalArray(j,i));
   EEPROM.commit();
 }
 void readCal(){
   for (int i=0; i<2; i++)
     for (int j=0; j<4; j++)
-      cal[i][j] = readEEPROM(CAL_ADDR+2*j+8*i);
+      cal.setCalArray(j,i,readEEPROM(CAL_ADDR+2*j+8*i));
 }
 void storeOffset(){
   for (int i=0; i<2; i++)
     for (int j=0; j<4; j++)
-      writeEEPROM(OFFSET_ADDR+2*j+8*i, offset[i][j]);
+      writeEEPROM(OFFSET_ADDR+2*j+8*i, offset.getCalArray(j,i));
   EEPROM.commit();
 }
 void readOffset(){
   for (int i=0; i<2; i++)
     for (int j=0; j<4; j++)
-      offset[i][j] = readEEPROM(OFFSET_ADDR+2*j+8*i);
+      offset.setCalArray(j,i,readEEPROM(OFFSET_ADDR+2*j+8*i));
 }
 void storeCalEn() {
   EEPROM.write(CAL_EN_ADDR,homography);
@@ -64,9 +64,9 @@ void storeSensitivity() {
 
 void startupEEPROM(){
   readCal();
-  homographyTransform(cal,false);
+  cal.calculateHomographyMatrix();
   readOffset();
-  homographyTransform(offset,true);
+  offset.calculateHomographyMatrix();
   homography = EEPROM.read(CAL_EN_ADDR);
   offsetOn = EEPROM.read(OFFSET_EN_ADDR);
   mirrorX = EEPROM.read(MIRROR_X_ADDR);

@@ -4,7 +4,6 @@ This is the Arduino code that has to be uploaded to the ESP32. In order to uploa
 <li>Download the latest version of <a href="https://www.arduino.cc/">Arduino</a></li>
 <li>Download the <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">USB drivers</a></li>
 <li>Add the ESP32 boards to Arduino. To do so, follow <a href="https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md">this</a> guide</li>
-<li>Open Arduino, click 'Sketch', 'Include Library', 'Manage Libraries' and search and install "MatrixMath", "TinyPICO Helper Library" and "ESP32 AnalogWrite"</li>
 <li>Download the latest files from <a href="https://github.com/CDeenen/MaterialPlane/releases/tag/ArduinoIRsensor">here</a> and extract the .zip file</li>
 <li>Open IRsensor.ino, and at '#define SSID "your_ssid"' and '#define PASS "your_password"' fill in your WiFi router's SSID and password</li>
 <li>If you're using the full sensor, leave "#define FULL_SENSOR" as is, otherwise comment it out: "//#define FULL_SENSOR"

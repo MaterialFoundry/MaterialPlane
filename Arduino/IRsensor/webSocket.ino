@@ -11,11 +11,7 @@ void hexdump(const void *mem, uint32_t len, uint8_t cols = 16) {
   if (DEBUG) Serial.printf("\n");
 }
 
-//pinMode(LED_L_R,OUTPUT);
-  //pinMode(LED_L_L,OUTPUT);
-
 void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
-
     switch(type) {
         case WStype_DISCONNECTED:
             if (DEBUG) Serial.printf("[%u] Disconnected!\n", num);
@@ -39,21 +35,12 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
             break;
         case WStype_TEXT:
             {
-            if (DEBUG) Serial.printf("[%u] get Text: %s\n", num, payload);
-            
-            String pl = "";
-            for (int i=0; i<length; i++) pl += char(payload[i]);
-            pl += '\n';
-            
-            if (pl.indexOf("STOP")>=0) stopCal = true;
-            else analyzeData(pl);
-            
-            //webSocket.sendTXT(num, "received");
-            // send message to client
-            // webSocket.sendTXT(num, "message here");
-
-            // send data to all connected clients
-            // webSocket.broadcastTXT("message here");
+              if (DEBUG) Serial.printf("[%u] get Text: %s\n", num, payload);
+              String pl = "";
+              for (int i=0; i<length; i++) pl += char(payload[i]);
+              pl += '\n';
+              if (pl.indexOf("STOP")>=0) stopCal = true;
+              else analyzeData(pl);
             }
             break;
         case WStype_BIN:

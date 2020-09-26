@@ -71,6 +71,8 @@ If on USB power:<br>
 <b>Off</b> - No battery connected/battery switched off<br>
 <b>Blinking red</b> - Battery charging<br>
 <b>Green</b> - Battery fully charged<br>
+<br>
+Using a 2000mAh, the low battery warning switched on after around 21 hours, with another 2.5 hours of battery life left.
 
 #### Connection status indicator (right LED)
 <b>Green</b> - Connected to at least 1 client<br>
@@ -110,7 +112,8 @@ Tinytronics: https://www.tinytronics.nl/shop/nl/communicatie/bluetooth/tinypico-
 Must be 35x53x11mm or smaller. You can get batteries with capacities of up to 2000mAh within that size, such as:<br>
 https://www.tinytronics.nl/shop/en/batteries/li-po/li-po-accu-3.7v-2000mah-jst-ph <br>
 <br>
-Unfortunately, the sensor isn't able to fully deplete the battery on use, because the TinyPICO has no boost circuitry, so it is considered empty when the voltage drops to around 3.7V. It is therefore recommended to get the biggest battery you can fit in the unit.<br>
+Unfortunately, the sensor isn't able to fully deplete the battery on use, because the TinyPICO has no boost circuitry, so it is considered empty when the voltage drops to around 3.7V. However, after doing an endurance test, the 2000mAh battery I used lasted for around 23:30 hours, so you could probably get away with a 1000 to 1500mAh battery even for the longest gaming sessions.<br>
+
 <br>
 <b>Switch</b><br>
 Unfortunately I don't have a manufacturer or parts number for these switches, because I bought them on eBay. If you search for "spdt miniature slide switch black" on eBay, and match the picture with the one below, you should be fine.<br>

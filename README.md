@@ -1,9 +1,13 @@
-<b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.</b>
+<b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br>
+It is also possible that the hardware might change, for improved mini detection. I'll probably keep supporting the current version, but I can't promise anything.<br>
+If you're uncomfortable with this, please wait until the project has been developed a bit further.</b>
 
 # Material Plane
 Material Plane is a <a href="https://foundryvtt.com/">Foundry VTT</a> module that allows physical minis to be tracked by Foundry when using a horizontally mounted TV. This allows you to bring the joy of physical minis into Foundry.<br>
 <br>
-The system consists of an IR sensor, and IR enabled mini bases. These bases contain IR LEDs that are tracked by the sensor. The sensor then relays this information to foundry over WiFi, where the information is interpreted as token movement
+The system consists of an IR sensor, and IR enabled mini bases. These bases contain IR LEDs that are tracked by the sensor. The sensor then relays this information to foundry over WiFi, where the information is interpreted as token movement.<br>
+<br>
+You can use any TV, monitor or projector for this.
 
 [![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Module/img/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
 
@@ -41,8 +45,8 @@ There are many different ESP32 variations available, most of them should work. W
 </ul>
 If you want to use the <a href="https://github.com/CDeenen/MaterialPlane/tree/master/3D%20Models/Sensor%20Enclosure">enclosure</a>, you will need an Adafruit TinyPICO. Sources:<br>
 Adafruit: https://www.adafruit.com/product/4335 <br>
-Core Electronics: https://www.adafruit.com/product/4335 <br>
-Tinytronics: https://www.tinytronics.nl/shop/nl/communicatie/bluetooth/tinypico-esp32-pico-d4-wifi-en-bluetooth-board <br>
+Core Electronics: https://core-electronics.com.au/tinypico-esp32-development-board.html <br>
+Tinytronics: https://www.tinytronics.nl/shop/en/communication/bluetooth/tinypico-esp32-pico-d4-wifi-and-bluetooth-board <br>
 
 If you're not planning to use the enclosure, you can choose between many different modules. If you're unsure on what to get, get a TinyPICO, Node32 or Wemos LOLIN32.<br>
 

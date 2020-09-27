@@ -40,11 +40,17 @@ void readSensor(){
       data_buf[i] = Wire.read();
       i++;
   }
+  //Reset all stored points
+  for (int i=0; i<4; i++){
+    Ix[i] = 1023;
+    Iy[i] = 1023;
+    Ii[i] = 255;
+  }
   pointsVisible = 0;
   //Get the X and Y values of point 0, to see if any points are visible
   Ix[0] = ((data_buf[3]>>4)&3) << 8 | data_buf[1];
   Iy[0] = ((data_buf[3]>>6)&3) << 8 | data_buf[2];
-
+  
   if (Ix[0] < 1023 && Iy[0] < 1023){
     //Get intensity of point 0
     Ii[0] = data_buf[9];
@@ -65,9 +71,11 @@ void readSensor(){
       }
       //If offset is on, perform second homography transform
       if (offsetOn){
-        offset.calculateCoordinates(Ix[i],Iy[i]);
-        Ix[i] = offset.getX();
-        Iy[i] = offset.getY();
+        for (int i=0; i<4; i++){
+          offset.calculateCoordinates(Ix[i],Iy[i]);
+          Ix[i] = offset.getX();
+          Iy[i] = offset.getY();
+        } 
       }
       //If values are not between 0 and 1022, set coordinates to 1023 and intensity to 255 (signals that there is no point)
       for (int i=0; i<4; i++)
@@ -155,8 +163,6 @@ void getCal(){
   readSensor();
   
   for (int i=0; i<4; i++){
-    char msg[40];
-
     //Wait until a point is detected
     while ((Ix[0] == 1023) || (Iy[0] == 1023)) {
       readSensor();
@@ -165,6 +171,7 @@ void getCal(){
     //Register the point in the calibration array
     cal.setCalArray(i, 0, Ix[0]);
     cal.setCalArray(i, 1, Iy[0]);
+    char msg[40];
     sprintf(msg,"{\"V\":-1,\"M\":\"CAL\",\"D\":%d}",i+1);
     if (DEBUG) Serial.println(msg);
     webSocket.broadcastTXT(msg);
@@ -191,15 +198,30 @@ void getCal(){
  */
 void getCalMulti(){
   if (DEBUG) Serial.println("STARTING CAL MULTI");
+  webSocket.broadcastTXT("{\"V\":-1,\"M\":\"MULTI\",\"D\":0}");
   homography = false;
   bool offsetOnOld = offsetOn;
   offsetOn = false;
+  uint8_t calPointsOld = 0;
   
   readSensor();
 
   //Wait until all 4 points are visible
   while ((Ix[3] == 1023) || (Iy[3] == 1023)) {
     readSensor();
+    uint8_t calPoints = 0;
+    for (int i=0; i<4; i++){
+      if (Ix[i] < 1023 || Iy[i] < 1023)
+        calPoints++;
+    }
+    if (calPoints != calPointsOld){
+      calPointsOld = calPoints;
+      char msg[40];
+      sprintf(msg,"{\"V\":-1,\"M\":\"OFFSET\",\"D\":%d}",calPoints);
+      if (DEBUG) Serial.println(msg);
+      webSocket.broadcastTXT(msg);
+      delay(100);
+    }
     if (calWait()) return; 
   }
   //Register the values in the calibration array
@@ -207,6 +229,7 @@ void getCalMulti(){
     cal.setCalArray(i, 0, Ix[i]);
     cal.setCalArray(i, 1, Iy[i]);
   }
+  webSocket.broadcastTXT("{\"V\":-1,\"M\":\"MULTI\",\"D\":4}");
   //Order the calibration points and calculate the homography array
   cal.orderCalArray();
   homography = true;
@@ -215,13 +238,11 @@ void getCalMulti(){
 
 void getOffset(){
   if (DEBUG) Serial.println("STARTING OFFSET");
-  uint16_t offsetTempX[4], offsetTempY[4];
+  webSocket.broadcastTXT("{\"V\":-1,\"M\":\"OFFSET\",\"D\":0}");
   offsetOn = false;
   readSensor();
 
   for (int i=0; i<4; i++){
-    char msg[40];
-
     //Wait until a point is detected
     while ((Ix[0] == 1023) || (Iy[0] == 1023)) {
       readSensor();
@@ -230,7 +251,8 @@ void getOffset(){
     //Register the point in the calibration array
     offset.setCalArray(i, 0, Ix[0]);
     offset.setCalArray(i, 1, Iy[0]);
-    sprintf(msg,"{\"V\":-1,\"M\":\"CAL\",\"D\":%d}",i+1);
+    char msg[40];
+    sprintf(msg,"{\"V\":-1,\"M\":\"OFFSET\",\"D\":%d}",i+1);
     if (DEBUG) Serial.println(msg);
     webSocket.broadcastTXT(msg);
 

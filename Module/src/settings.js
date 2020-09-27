@@ -75,7 +75,7 @@ console.log(MODULE.moduleName);
      */
     game.settings.register(MODULE.moduleName,'HideElements', {
         name: "Hide Display Elements",
-        hint: "Hides all display elements for the target player (if not GM). Client can hold 'Ctrl' to show the elements",
+        hint: "Hides all display elements for the target player (if not GM). Client can click 'Ctrl' to toggle the elements",
         scope: "world",
         config: true,
         default: false,

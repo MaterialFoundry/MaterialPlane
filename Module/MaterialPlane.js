@@ -49,9 +49,14 @@ let sens = 0;
 let coordsCurrent = [];
 let dialog;
 let calEn = false;
+let offsetEn = false;
+let compX = 0;
+let compY = 0;
 
 let tokenTemp;
 let movementMethod = 0;
+
+let lowBattery = false;
 
 class IRtoken {
     constructor() {
@@ -72,7 +77,8 @@ class IRtoken {
 
         //Find the nearest token to the scaled coordinates
         let token = this.findToken( scaledCoords );
-
+        //console.log("Token: ",token.name);
+        
         //If no token was close enough, but a token is currently being controlled, move the token (assume physical movement was too fast for animation)
         if (this.controllingToken == true && (token == false || (token != false && token.id == this.controlledToken.id) ) ) {
             this.moveToken(this.controlledToken,scaledCoords);
@@ -96,7 +102,6 @@ class IRtoken {
         //else if (token != false && token.id == this.controlledToken.id) 
         //    this.moveToken(token,scaledCoords);
         
-        
     }
     
     /**
@@ -105,8 +110,10 @@ class IRtoken {
      * @param {*} coords 
      */
     moveToken(token,coords) {
-        //console.log("canControl: "+token.can(game.user,"control"));
-        
+        //Compensate for the difference between the center of the token and the top-left of the token, and compensate for token size
+        coords.x -= token.hitArea.width/2 +(token.data.width - 1)*canvas.scene.data.grid/2;
+        coords.y -= token.hitArea.height/2 -(token.data.height - 1)*canvas.scene.data.grid/2;
+
         if (token.can(game.user,"control") == false) movementMethod = 0;
 
         //Default foundry movement method: update movement after dropping token
@@ -232,9 +239,9 @@ class IRtoken {
 
         //Compensate for an offset due to the difference between the measured coordinate and the token coordinate
         if (cornerComp) {
-            let edgeOffset = canvas.scene.data.grid/(2*canvas.scene._viewPosition.scale);
-            posX -= edgeOffset;
-            posY -= edgeOffset;
+         //   let edgeOffset = canvas.scene.data.grid/(2*canvas.scene._viewPosition.scale);
+          //  posX -= edgeOffset;
+          //  posY -= edgeOffset;
         }
 
         //Return the value
@@ -253,14 +260,14 @@ class IRtoken {
         let gridsize = canvas.scene.data.grid*canvas.scene._viewPosition.scale;
 
         //For all tokens on the canvas: get the distance between the token and the coordinate. If this is smaller than half the gridsize in both axes, 'token' is returned
-        for (let token of canvas.tokens.children[0].children)
-            if (Math.abs(token.x - coords.x) < token.hitArea.width/2 && Math.abs(token.y - coords.y) < token.hitArea.height/2)
-                return token;     
+        for (let token of canvas.tokens.children[0].children){
+            let coordsCenter = token.getCenter(token.x,token.y);      
+            if (Math.abs(coordsCenter.x - coords.x) < token.hitArea.width/2 && Math.abs(coordsCenter.y - coords.y) < token.hitArea.height/2)
+                return token;  
+        }
+                   
         return false;
-    }
-
-
-    
+    } 
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -306,10 +313,6 @@ function panZoom(coords) {/*
 
 }
 
-
-
-
-
 let calDialog;
 /**
  * Analyzes the message received from the IR tracker.
@@ -320,7 +323,16 @@ let calDialog;
  */
 async function analyzeWSmessage(msg,passthrough = false){
     let data = JSON.parse(msg);
-    //console.log(data);
+ //   console.log(data);
+
+    //Low battery warning: send notification every 5 minutes
+    if (data.LB && lowBattery == false){
+        lowBattery = true;
+        ui.notifications.warn("IR sensor: Low battery");
+        setTimeout(function(){ 
+            lowBattery = false;
+        }, 300000);
+    }
 
     //Yes IR => update token
     if (data.V==1 && game.settings.get(moduleName,'menuOpen') == false && enableModule){
@@ -341,7 +353,7 @@ async function analyzeWSmessage(msg,passthrough = false){
     }
 
     //GM's calibration screen
-    else if (data.V >= 0 && game.user.isGM && game.settings.get(moduleName,'menuOpen')) {
+    else if (game.user.isGM && game.settings.get(moduleName,'menuOpen')) {
         let change = false;
         for (let i=0; i<4; i++){
             let x = 0;
@@ -354,26 +366,37 @@ async function analyzeWSmessage(msg,passthrough = false){
                 else if (i == 3) {x = data.X3; y = data.Y3; intensity = data.I3;}
                 dialog.newCoordinates(i,x,y,intensity);
             }
+            else
+            dialog.newCoordinates(i,0,0,0);
         }
         if (data.V > 0)change = true;
         let mirX_temp = (data.MX == 1)? true: false;
         let mirY_temp = (data.MY == 1)? true: false;
         let rot_temp = (data.R == 1)? true: false;
-        let sens_temp = data.S;
+        let sens_temp = data.S + 1;
         let calEn_temp = (data.H == 1)? true: false;
+        let offsetEn_temp = (data.O == 1)? true: false;
+        let compX_temp = data.CX;
+        let compY_temp = data.CY;
 
         if (mirX_temp != mirX) change = true;
         else if (mirY_temp != mirY) change = true;
         else if (rot_temp != rot) change = true;
         else if (sens_temp != sens) change = true;
         else if (calEn_temp != calEn) change = true;
+        else if (offsetEn_temp != offsetEn) change = true;
+        else if (compX_temp != compX) change = true;
+        else if (compY_temp != compY) change = true;
         if (change){
-            mirX = (data.MX == 1)? true: false;
-            mirY = (data.MY == 1)? true: false;
-            rot = (data.R == 1)? true: false;
-            sens = data.S;
-            calEn = (data.H == 1)? true: false;
-            dialog.updateSett(mirX,mirY,rot,sens,calEn);
+            mirX = mirX_temp;
+            mirY = mirY_temp;
+            rot = rot_temp;
+            sens = sens_temp;
+            calEn = calEn_temp;
+            offsetEn = offsetEn_temp;
+            compX = compX_temp;
+            compY = compY_temp;
+            dialog.updateSett(mirX,mirY,rot,sens,calEn, offsetEn,compX,compY);
             dialog.render(true);
         }
     }
@@ -386,9 +409,18 @@ async function analyzeWSmessage(msg,passthrough = false){
             if (calDialog != undefined) calDialog.close();
             let calPoints = data.D;
             let content = `
-                Please calibrate each corner of you screen.<br>
-                <br>
-            `;
+                Single-point calibration<br><br>
+                Please calibrate each corner of you screen.<br><br>`;
+            if (data.M == "MULTI") {
+                content = `
+                    Multipoint calibration<br><br>
+                    Please switch on the corner LEDs.<br><br>`
+            }
+            if (data.M == "OFFSET") {
+                content = `
+                    Offset calibration<br><br>
+                    Please calibrate each corner of you screen.<br><br>`
+            }
             if (calPoints >= 0 && calPoints < 4)
                 content += calPoints + `/4 points calibrated<br>`;
             else if (calPoints == 4){
@@ -430,7 +462,7 @@ function startWebsocket() {
     }
 
     ws.onopen = function() {
-        ui.notifications.info("Connected to sensor module on: "+ip+':'+port);
+        ui.notifications.info("IR sensor: Connected on: "+ip+':'+port);
         wsOpen = true;
         clearInterval(wsInterval);
         wsInterval = setInterval(resetWS, 5000);
@@ -444,8 +476,8 @@ function startWebsocket() {
  * Try to reset the websocket if a connection is lost
  */
 function resetWS(){
-    if (wsOpen) ui.notifications.warn("Disconnected from the IR tracker, attempting to reconnect");
-    else ui.notifications.warn("Can't connect to the IR tracker, retrying");
+    if (wsOpen) ui.notifications.warn("IR sensor: Disconnected, attempting to reconnect");
+    else ui.notifications.warn("IR sensor: Can't connect, retrying");
     startWebsocket();
 }
 
@@ -562,7 +594,7 @@ Hooks.on("renderSettings", (app, html) => {
     btn.on("click", event => {
         game.settings.set(moduleName,'menuOpen',true);
         dialog = new calibrationForm();
-        dialog.updateSett(mirX,mirY,rot,sens);
+        dialog.updateSett(mirX,mirY,rot,sens,calEn, offsetEn,compX,compY);
         dialog.render(true)
     });
 });
@@ -616,5 +648,3 @@ Hooks.on('renderPlayerList', (app, html) => {
         html.hide();
     }
 });
-
-

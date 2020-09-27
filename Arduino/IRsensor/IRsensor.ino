@@ -69,6 +69,9 @@ uint8_t pointsVisible = 0;
 bool stopCal = false;
 uint32_t millisOld = 0;
 uint8_t debounceCounter = 0;
+int8_t compX = 0;
+int8_t compY = 0;
+bool lowBattery = false;
 
 #ifdef FULL_SENSOR
   /**
@@ -107,10 +110,12 @@ uint8_t debounceCounter = 0;
     }
     else {
       if (tp.GetBatteryVoltage() < BAT_WARNING_VOLTAGE){
+        lowBattery = true;
         analogWrite(LED_L_R,LED_R_BRIGHTNESS);
         analogWrite(LED_L_G,0);
       }
       else {
+        lowBattery = false;
         analogWrite(LED_L_R,0);
         analogWrite(LED_L_G,LED_G_BRIGHTNESS);
       }

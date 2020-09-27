@@ -31,6 +31,19 @@ bool analyzeData(String received) {
     storeSensitivity();
     return 1;
   }
+  if (received2[0] == "COMP"){
+    if (received2[1] == "X"){
+      compX = received2[2].toInt();
+      storeCompX();
+    }
+    else if (received2[1] == "Y"){
+      compY = received2[2].toInt();
+      storeCompY();
+    }
+    else if (received2[1] == "GET"){
+      printf("COMPX: %d\tCOMPY: %d\n",compX,compY);
+    }
+  }
   else if (received2[0] == "CAL"){
     if (received2[1] == "SINGLE") {
       getCal();
@@ -124,11 +137,22 @@ void sendData() {
     for (int i=0; i<4; i++)
       Iy[i] = 1023 - Iy[i];
 
+  for (int i=0; i<4; i++){
+    Ix[i] += compX;
+    Iy[i] += compY;
+    if (Ix[i] < 0) Ix[i] = 0;
+    else if (Ix[i] > 1022) Ix[i] = 1022;
+    if (Iy[i] < 0) Iy[i] = 0;
+    else if (Iy[i] > 1022) Iy[i] = 1022;
+  }
   char msg[200];
-  sprintf(msg,"{\"V\":%d,\"H\":%d,\"O\":%d,\"MX\":%d,\"MY\":%d,\"R\":%d,\"S\":%d",pointsVisible,homography,offsetOn,mirrorX,mirrorY,rotation,sensitivity);
+  sprintf(msg,"{\"V\":%d,\"H\":%d,\"O\":%d,\"MX\":%d,\"MY\":%d,\"R\":%d,\"S\":%d,\"CX\":%d,\"CY\":%d",pointsVisible,homography,offsetOn,mirrorX,mirrorY,rotation,sensitivity,compX,compY);
   #ifdef FULL_SENSOR
-    sprintf(msg+strlen(msg),",\"B\":%.2f,\"BS\":%d",tp.GetBatteryVoltage(),batteryState);
+    sprintf(msg+strlen(msg),",\"B\":%.2f,\"LB\":%d",tp.GetBatteryVoltage(),lowBattery);
+  #else
+    sprintf(msg+strlen(msg),",\"B\":0,\"LB\":0");
   #endif
+  
   for(int i=0; i<4; i++)
         if (pointsVisible > i) 
           sprintf(msg+strlen(msg),",\"X%d\":%d,\"Y%d\":%d,\"I%d\":%d",i,Ix[i],i,Iy[i],i,Ii[i]);     

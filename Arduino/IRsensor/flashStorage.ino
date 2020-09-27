@@ -6,6 +6,8 @@
 #define SENSITIVITY_ADDR    5
 #define CAL_ADDR            6 //8 * uint16_t = 16 bytes
 #define OFFSET_ADDR         22  //8 * uint16_t = 16 bytes
+#define COMPX_ADDR          38
+#define COMPY_ADDR          39
 
 uint16_t readEEPROM(uint8_t addr){
   return EEPROM.read(addr) | EEPROM.read(addr+1)<<8;
@@ -37,6 +39,7 @@ void readOffset(){
     for (int j=0; j<4; j++)
       offset.setCalArray(j,i,readEEPROM(OFFSET_ADDR+2*j+8*i));
 }
+
 void storeCalEn() {
   EEPROM.write(CAL_EN_ADDR,homography);
   EEPROM.commit();
@@ -61,6 +64,14 @@ void storeSensitivity() {
   EEPROM.write(SENSITIVITY_ADDR,sensitivity);
   EEPROM.commit();
 }
+void storeCompX(){
+  EEPROM.write(COMPX_ADDR,compX);
+  EEPROM.commit();
+}
+void storeCompY(){
+  EEPROM.write(COMPY_ADDR,compY);
+  EEPROM.commit();
+}
 
 void startupEEPROM(){
   readCal();
@@ -73,4 +84,6 @@ void startupEEPROM(){
   mirrorY = EEPROM.read(MIRROR_Y_ADDR);
   rotation = EEPROM.read(ROTATION_ADDR);
   sensitivity = EEPROM.read(SENSITIVITY_ADDR);
+  compX = EEPROM.read(COMPX_ADDR);
+  compY = EEPROM.read(COMPY_ADDR);
 }

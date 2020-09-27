@@ -11,6 +11,9 @@ export class calibrationForm extends FormApplication {
        this.rotation = false;
        this.sensitivity = 0;
        this.calibrationEn = false;
+       this.offsetEn = false;
+       this.compX = 0;
+       this.compY = 0;
 
        this.X0 = 0;
        this.Y0 = 0;
@@ -47,13 +50,16 @@ export class calibrationForm extends FormApplication {
         //this.render();
     }
 
-    updateSett(Mx,My,R,S,calEn){
+    updateSett(Mx,My,R,S,calEn,offsetEn,compX,compY){
         this.mirrorX = Mx;
         this.mirrorY = My;
         this.rotation = R;
         this.sensitivity = S;
         this.calibrationEn = calEn;
-        console.log("Mx: "+Mx+" My: "+My+" rot: "+R+" sensitivity: "+S);
+        this.offsetEn = offsetEn;
+        this.compX = compX;
+        this.compY = compY;
+        //console.log("Mx: "+Mx+" My: "+My+" rot: "+R+" sensitivity: "+S);
     }
 
     _updateObjects(event, formData){
@@ -83,7 +89,10 @@ export class calibrationForm extends FormApplication {
             mirrorY: this.mirrorY,
             rotation: this.rotation,
             sens: this.sensitivity,
-            cal: this.calibrationEn
+            cal: this.calibrationEn,
+            offset: this.offsetEn,
+            compX: this.compX,
+            compY: this.compY
         }
     }
 
@@ -103,8 +112,11 @@ export class calibrationForm extends FormApplication {
         const mirY = html.find("input[name='mirY']");
         const rot = html.find("input[name='rot']");
         const sens = html.find("input[name='sens']");
-        const disableCalBtn = html.find("button[name='disableCalBtn']");
+        const compX = html.find("input[name='compX']");
+        const compY = html.find("input[name='compY']");
         const calBtn = html.find("button[name='calBtn']");
+        const calEn = html.find("input[name='cal']");
+        const offsetEn = html.find("input[name='offset']");
 
         mirX.on("change", event => {
             let msg = "MIR X ";
@@ -126,20 +138,43 @@ export class calibrationForm extends FormApplication {
 
         sens.on("change", event => {
             let msg = "SENS ";
+            msg += event.target.value - 1;
+            MODULE.sendWS(msg);
+        });
+
+        compX.on("change", event => {
+            let msg = "COMP X ";
             msg += event.target.value;
             MODULE.sendWS(msg);
         });
 
-        disableCalBtn.on("click", event => {
-            MODULE.sendWS("CAL EN 0");
+        compY.on("change", event => {
+            let msg = "COMP Y ";
+            msg += event.target.value;
+            MODULE.sendWS(msg);
+        });
+
+        calEn.on("change", event => {
+            let msg = "CAL EN ";
+            msg += event.target.checked? "1" : "0";
+            MODULE.sendWS(msg);
+        });
+
+        offsetEn.on("change", event => {
+            let msg = "OFFSET EN ";
+            msg += event.target.checked? "1" : "0";
+            MODULE.sendWS(msg);
         });
 
         calBtn.on("click", event => {
-            let msg = "CAL "
-            msg += (html.find("select[name='calMethod']")[0].value == "SinglePoint")? "SINGLE" : "MULTI";
-            console.log(html.find("select[name='calMethod']")[0].value);
+            let msg = "CAL ";
+            if (html.find("select[name='calMethod']")[0].value == "SinglePoint")
+                msg += "SINGLE";
+            else if (html.find("select[name='calMethod']")[0].value == "MultiPoint")
+                msg += "MULTI";
+            else if (html.find("select[name='calMethod']")[0].value == "Offset")
+                msg = "OFFSET";
             MODULE.sendWS(msg);
-            console.log("calBtn");
         });
     }
 }

@@ -18,22 +18,22 @@
         }
         ctx.fillStyle = '#FF0000';
         
-        if ({{x0}} > 0 && {{x0}} > 0) {
+        if ({{x0}} > 0 && {{x0}} < 1023) {
             ctx.beginPath();
             ctx.arc({{x0}}/1023*250,{{y0}}/1023*250,3,0,2*Math.PI,false);
             ctx.fill();
         }
-        if ({{x1}} > 0 && {{x1}} > 0) {
+        if ({{x1}} > 0 && {{x1}} < 1023) {
             ctx.beginPath();
             ctx.arc({{x1}}/1023*250,{{y1}}/1023*250,3,0,2*Math.PI,false);
             ctx.fill();
         }
-        if ({{x2}} > 0 && {{x2}} > 0) {
+        if ({{x2}} > 0 && {{x2}} < 1023) {
             ctx.beginPath();
             ctx.arc({{x2}}/1023*250,{{y2}}/1023*250,3,0,2*Math.PI,false);
             ctx.fill();
         }
-        if ({{x3}} > 0 && {{x3}} > 0) {
+        if ({{x3}} > 0 && {{x3}} < 1023) {
             ctx.beginPath();
             ctx.arc({{x3}}/1023*250,{{y3}}/1023*250,3,0,2*Math.PI,false);
             ctx.fill();
@@ -94,26 +94,34 @@
         <label>Rotation</label>
         <input type="checkbox" name="rot" {{checked rotation}}>
     </div>
-    <div class="slidecontainer">
-        <label>Sensitivity</label>
-        <input type="range" min="150" max="255" value={{sens}} class="slider" id="myRange" name="sens">
-      </div>
+    <div class="form-group options" style="display:flex">
+        <label style="flex:7">Sensitivity</label>
+        <input style="flex:2" type="number" min="1" max="5" value={{sens}} name="sens">
+    </div>
+    <div class="form-group options" style="display:flex">
+        <label style="flex:7">X Compensation</label>
+        <input style="flex:2" type="number" min="-128" max="127" value={{compX}} name="compX">
+    </div>
+    <div class="form-group options" style="display:flex">
+        <label style="flex:7">Y Compensation</label>
+        <input style="flex:2" type="number" min="-128" max="127" value={{compY}} name="compY">
+    </div>
     <h2>Calibration</h2>  
-    <div class="form-group">
-        <label for="calEn">Calibrated</label>
-        <input type="radio" name="calEn" 
-        {{checked calEn}}>
-
-        <button name="disableCalBtn" type="button">
-            <i></i> Disable Calibration
-        </button>
+    <div class="form-group options" title="Cal">
+        <label>Calibration</label>
+        <input type="checkbox" name="cal" {{checked cal}}>
+    </div>
+    <div class="form-group options" title="Offset">
+        <label>Offset</label>
+        <input type="checkbox" name="offset" {{checked offset}}>
     </div>
 
     <div class="form-group">
         <label for="CalibrationMethod">Cal method:</label>
         <select name="calMethod" id="action">
             <option value="SinglePoint">Single Point</option>
-            <option value="Multipoint">Multipoint</option>
+            <option value="MultiPoint">Multipoint</option>
+            <option value="Offset">Offset</option>
         </select> 
 
 

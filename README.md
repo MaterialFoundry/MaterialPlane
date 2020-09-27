@@ -74,9 +74,11 @@ Please make sure you've done the following:<br>
 <li>Installed the <a href="https://github.com/CDeenen/MaterialPlane/tree/master/Arduino#arduino-code">Arduino code</a></li>
 <li>Made one or more <a href="https://github.com/CDeenen/MaterialPlane/tree/master/3D%20Models#ir-bases">IR bases</a></li>
 <li>Installed the Foundry module</li>
+<li>Set up the module settings (see below)</li>
+<li>Set up the IR sensor settings in the calibration menu, and calibrated the sensor (see below)</li>
 </ul>
 
-Once everything has been set up in foundry (see below), the module is simple to use.<br>
+Once everything has been set up, the module is simple to use.<br>
 For each mini that you want to track, you need an IR base. Simple place the mini on top, making sure that the LED is always oriented in the same way (the same way you did when calibrating, see below). Simply press the switch on the base, move the mini to its new location, and release the switch.
 
 ## Module Settings
@@ -87,7 +89,7 @@ In the module settings screen, you can find the following settings:
 <li><b>Deselect Token After Drop</b> - Automatically deselects the token once you release the switch. Works great in combination with the 'Hot Seat' module, because it will default to the shared view</li>
 <li><b>Non-Owned Movement</b> - Allows the movement of non-owned tokens, without being able to see their vision. Useful if NPC minis are being tracked</li>
 <li><b>Target Name</b> - Player name of the client that has the TV connected. Is set to 'Observer' by default, just as the 'Hot Seat' module</li>
-<li><b>Hide Display Elements</b> - Hides all display elements on the target client to give a clean view</li>
+<li><b>Hide Display Elements</b> - Hides all display elements on the target client to give a clean view. Client can toggle the setting with Ctrl</li>
 <li><b>Sensor Module IP</b> - IP address of the sensor module. More information <a href="https://github.com/CDeenen/MaterialPlane/tree/master/Arduino/IRsensor">here</a></li>
 </ul>
 
@@ -109,26 +111,70 @@ The calibration menu has 3 sections: Coordinates, Settings, and Calibration
 This section gives an overview of what the sensor can see (in the calibrated state).<br>
 On the left, you can see a table with shows the coordinates and intensity of all 4 IR dots that can be tracked, and on the right you can see a box in which these dots are displayed.<br>
 Both are updated in real-time, and can therefore be used to position the sensor relative to the TV.<br>
-Once you have mounted the sensor, you should use one of your IR bases to test if all corners of the TV are within the sensor's range. Please make sure that you have disabled the previous calibration (see below).
+The maximum value in the X-direction is 1023, and the maximum value in the Y-direction is 768 if it's uncalibrated, and 1023 if it's calibrated. The intensity can be max 255.<br>
 
 ### Settings
-Here you can change the settings of the sensor. <br>
-You can mirror in both X and Y direction, rotate the data (switch X and Y), and change the sensitivity of the sensor.<br>
-Use the data in the 'Coordinates' section above to determine how you should set these settings. When you move the IR base right, the dot in the square should also move right (otherwise click 'Mirror X'), when you move the IR base up, the dot should also move up (otherwise click 'Mirror Y'), and when you move up, but the dot moves left or right, click 'rotate' (you might have to redo the mirror settings).<br>
-Based on the 'intensity' value you can increase or decrease the sensitivity. You might have to try different settings, because the sensitivity response is a bit strange at the moment.
+Here you can change the settings of the sensor: <br>
+<ul>
+<li><b>Mirror X</b> - Mirrors the X direction</li>
+<li><b>Mirror Y</b> - Mirrors the Y direction</li>
+<li><b>Rotation</b> - Rotate the coordinates (interchanges X and Y)</li>
+<li><b>Sensitivity</b> - Sets the sensitivity of the sensor. Can be between 1 and 5, 5 being the highest sensitivity</li>
+<li><b>X Compensation</b> - Shifts the measured X coordinate to compensate for any offset (see below), can be between -128 and 127</li>
+<li><b>Y Compensation</b> - Shifts the measured X coordinate to compensate for any offset (see below), can be between -128 and 127</li>
+</ul>
+<br>
+The above settings are saved on the IR sensor, and will only be need to set once.<br>
+<br>
+Use the data in the 'Coordinates' section above to determine how you should set these settings. When you move the IR base right, the dot in the square should also move right (otherwise click 'Mirror X'), when you move the IR base up, the dot should also move up (otherwise click 'Mirror Y'), and when you move up, but the dot moves left or right, click 'rotate' (you might have to redo the mirror settings). Enabling or disabling the calibration or offset might mirror the response, so change accordingly.<br>
+<br>
+The compensation settings allow you to adjust the coordinates to get a perfect response. You might notice that when you move a mini, the token is not exactly centered on the IR base (when using Default movement), or the token moves too fast or to slow to the next gridspace (when using Step-by-Step movement). By adding compensation, you can correct this response.<br>
+The easiest way to do this, is to make sure the sensor is calibrated and the mirror and rotation settings are set correctly. Then set the movement to Default in the module settings, and select a token with an IR base. If the token is shifted to the right, relative to the IR base, set a negative X compensation. If the token is shifted to the top, relative to the IR base, set a positive Y compensation.<br>
+Check this across the whole display. If there is a big difference across the display, you might need to redo the calibration.<br>
+<br>
+<b>Note:</b> You might encounter issues trying to change the settings while IR dots are visible to the sensor. I have not yet found a way around this, so for now, if you want to change the settings, it's best to switch off all IR sources.
 
 ### Calibration
 You use this section to actually calibrate the sensor.<br>
-You can see a small dot, which indicates whether the sensor is currently calibrated (might be an old calibration, though). On the right you can find the 'Disable Calibration' button, which disables the calibration.<br>
-On the bottom you can find the calibration method. You can select between 'Single Point' and 'Multipoint' calibration:
+There are two tickboxes:<br>
+<ul>
+<li><b>Calibration</b> - Shows if calibration is enabled, and enables or disables it by clicking the box</li>
+<li><b>Offset</b> - Shows if offset calibration is enabled, and enables or disables it by clicking the box</li>
+</ul>
+<br>
+On the bottom you can find the calibration method. You can select between 'Single Point', 'Multipoint' and 'Offset' calibration:
 <ul>
 <li><b>Single Point Calibration</b> - You calibrate all four corners of the TV, on point at a time. You place the IR base exactly on one of the corners (the center of the base should align with the corner), press the button, and repeat this process for all 4 corners. There's an on-screen box to show you how many points you're calibrated, so you can see whether each measurement was succesful</li>
-<li><b>Multipoint Calibration</b> - With multipoint calibration, you don't have to calibrate all four points every time you move either the sensor or the TV. In order to use this method, you'll need permanently mounted IR LED's near each corner of the TV (doesn't have to be exactly on each corner, but fairly close). You will need to do a single point calibration the very first time you use this (make sure you've switched the 4 LEDs off), and once you're done that, the sensor will know the position of the screen, compared to the 4 LEDs, so it only needs the 4 LEDs to do a full calibration. You simply switch the LEDs on, press 'calibrate', and you're done.</li>
+<li><b>Multipoint Calibration</b> - With multipoint calibration, you don't have to calibrate all four points every time you move either the sensor or the TV. In order to use this method, you'll need 4 permanently mounted IR LED's near each corner of the TV (doesn't have to be exactly on each corner, but fairly close). You will need to do an offset calibration the very first time you use this (make sure you've switched the 4 LEDs off), and once you're done that, the sensor will know the position of the screen, compared to the 4 LEDs, so it only needs the 4 LEDs to do a full calibration. You simply switch the LEDs on, press 'calibrate', and you're done.</li>
+<li><b>Offset Calibration</b> - When using multipoint calibration, the sensor needs to know de distance between the 4 calibration points and the corners of your screen. For this, you need to perform an offset calibration. The procedure is exactly the same as single-point calibration. This offset calibration only needs to be performed if the location of the 4 permanent LEDs changes.</li> 
 </ul>
 
-<b>Note: </b>When calibrating, you need to have the IR bases oriented in the same way for all calibration points, and for the use afterwards. Using the bases downloaded from this page, you'll probably want the switch on the right, so the LED will be in the top right. You have to keep this orientation always, so do not rotate the base, or the sensor's measurement will be off!
+<b>Note: </b>When calibrating, you need to have the IR bases oriented in the same way for all calibration points, and for the use afterwards. Using the bases downloaded from this page, you'll probably want the switch on the right, so the LED will be in the top right. You have to keep this orientation always, so do not rotate the base, or the sensor's measurement will be off!<br>
+Furthermore, you want the center of the IR base to correspond exactly with the corner of the screen.
 
 ![calibrationMenu](https://github.com/CDeenen/MaterialPlane/blob/master/Module/img/CalibrationMenu.png)
+
+## Calibration Procedure
+### Single Point Calibration
+<ol>
+<li>Mount the IR sensor above the screen</li>
+<li>Open the calibration menu, and make sure both 'Calibration' and 'Offset' are off</li>
+<li>Use an IR base, hold it at each corner of the screen, and press the button. You should position the sensor in such a way that each corner is visible to the sensor (look at the live view). Try to have the sensor as close as possible to the screen, to have the greatest resolution</li>
+<li>Start the calibration procudure by setting 'Cal method' to 'Single Point', and pressing the 'Calibrate' button</li>
+<li>Hold an IR base at a corner, in such a way that the center of the base corresponds exactly with the corner of the screen, and hold the base in the same way you will be using it later (probably switch on the right side), and press the button on the IR base</li>
+<li>Repeat for all other corners, you can do it in any order</li>
+<li>(Only needs to be done once) Check if you need to mirror or rotate the X or Y axes by moving an IR base with button pressed horizontally and observing whether the dot in the live view follows your movement</li>
+<li>(Only needs to be done once) Move across the screen with an IR base with switch pressed, and observe the intensity value. It will be lowest around the corners, and highest around the center, the difference can be quite big. If the intensity is too low or too high, change it</li>
+<li>(Only needs to be done once) Set the movement to Default in the module settings, and select a token with an IR base. If the token is shifted to the right, relative to the IR base, set a negative X compensation, if its shifted to the left, set a positive X compensation. If the token is shifted to the top, relative to the IR base, set a positive Y compensation, if it is shifted to the bottom, set a negative Y compensation. Check this across the whole display. If there is a big difference across the display, you might need to redo the calibration</li>
+</ol>
+
+### Multi Point Calibration
+<ol>
+<li>Follow steps 1 and 2 of the single point calibration procedure</li>
+<li>Switch on the permanently mounted LEDs, and check if all LEDs are visible in the live view. You should position the sensor in such a way that each corner is visible to the sensor (look at the live view). Try to have the sensor as close as possible to the screen, to have the greatest resolution</li>
+<li>Start the calibration procudure by setting 'Cal method' to 'Multipoint', and pressing the 'Calibrate' button. It should finish the calibration immediately</li>
+<li>(Only needs to be done once) Switch off the 4 LEDs, set the 'Cal method' to 'Offset', and press the 'Calibrate' button. Follow steps 5 - 9 of the single point calibration procedure</li>
+</ol>
 
 # Suggested Other Modules
 Foundry is made for digital play, but there are some modules available that might enhance your experience when using physical minis:

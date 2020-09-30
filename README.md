@@ -2,6 +2,17 @@
 It is also possible that the hardware might change, for improved mini detection. I'll probably keep supporting the current version, but I can't promise anything.<br>
 If you're uncomfortable with this, please wait until the project has been developed a bit further.</b>
 
+### Pre-Build Kits
+It is possible to build the required hardware yourself, but there might be people interested in buying a pre-build kit, consisting of a sensor module and some IR bases. I currently do not sell anything, but that might change in the future. I'm also thinking about starting a kickstarter campaign, which would allow much higher quality hardware and at a larger scale than what I could build in my tiny workshop.<br>
+<br>
+<b>There is only one way for me to know if there's enough interest in either a kickstarter or pre-build kits: you have to let me know you're interested.</b><br>
+<br>
+If you are, could you please let me know either through email: cdeenen@outlook.com, or Discord: Cris#6864.<br>
+Doing this is in no way a commitment to buy, it only gives me insight in how much interest there is.<br>
+If there is enough interest, I will also be launching a Discord server where we could discuss both the hardware and software side of this module, discuss potential new features and report bugs/issues.<br>
+<br>
+Thanks!
+
 # Material Plane
 Material Plane is a <a href="https://foundryvtt.com/">Foundry VTT</a> module that allows physical minis to be tracked by Foundry when using a horizontally mounted TV. This allows you to bring the joy of physical minis into Foundry.<br>
 <br>

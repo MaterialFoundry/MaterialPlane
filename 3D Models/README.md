@@ -157,10 +157,11 @@ Yellow to pin 21<br>
 <img src="https://github.com/CDeenen/MaterialPlane/blob/master/3D%20Models/img/LEDWiring.jpg" width="500">
 
 <b>7.</b> Solder the red and green wires to the TinyPICO:<br>
-LED1 red wire to pin 25<br>
-LED1 green wire to pin 26<br>
-LED2 red wire to pin 27<br>
-LED2 green wire to pin 15<br>
+LED1 red wire to pin 26<br>
+LED1 green wire to pin 25<br>
+LED2 red wire to pin 15<br>
+LED2 green wire to pin 27<br>
+<b>Note:</b> In the image below I switched the red and green wires around, due to a wiring mistake. Please use the pin numbers above.<br>
 <br>
 <b>8.</b> Solder one leg of the 12K and 22K resistors together. Solder the other leg of the 22K resistor to GND (next to 5V), and the other leg of the 12K resistor to 5V. Cut a wire to around 4 cm (I used green in the image below), and solder that wire to the connection between the two resistors, and pin 32.<br>
 <br>

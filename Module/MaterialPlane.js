@@ -95,9 +95,15 @@ class IRtoken {
                 this.moveToken(token,scaledCoords);
             }
         }
-        else if (token == false)
-            if (this.controlledToken != false)
-                this.controlledToken.release();
+        else if (token == false){
+            //if (this.controlledToken != false)
+            //this.controlledToken.release();
+            let tokens = canvas.tokens.children[0].children;
+            for (let i=0; i<tokens.length; i++)
+                if (tokens[i]._controlled == true)
+                    tokens[i].release();
+        }
+            
         //Else if a token was close enough, and the token was previously selected, move the token
         //else if (token != false && token.id == this.controlledToken.id) 
         //    this.moveToken(token,scaledCoords);
@@ -114,12 +120,26 @@ class IRtoken {
         coords.x -= token.hitArea.width/2 +(token.data.width - 1)*canvas.scene.data.grid/2;
         coords.y -= token.hitArea.height/2 -(token.data.height - 1)*canvas.scene.data.grid/2;
 
-        if (token.can(game.user,"control") == false) movementMethod = 0;
+        if (token.can(game.user,"control") != true) movementMethod = 0;
 
         //Default foundry movement method: update movement after dropping token
         if (movementMethod == 0) {
+            let gridCoords = canvas.grid.getCenter(coords.x-canvas.scene.data.grid/2,coords.y-canvas.scene.data.grid/2);
+            let newCoords = {
+                x: (gridCoords[0]+canvas.scene.data.grid/2),
+                y: (gridCoords[1]+canvas.scene.data.grid/2)
+            }
+            let newCoords2 = {
+                x: (newCoords.x+canvas.scene.data.grid/2),
+                y: (newCoords.y+canvas.scene.data.grid/2)
+            }
+            if (token.can(game.user,"control") && token.checkCollision(newCoords2,true) && game.user.isGM == false) return;
             this.currentPosition = coords;
-            token.setPosition(coords.x, coords.y, false);
+            token.data.x = coords.x;
+            token.data.y = coords.y;
+            token.refresh();
+            if (game.settings.get("core", "tokenDragPreview") && token.can(game.user,"control"))
+                token.updateSource({noUpdateFog: false});
         }
         //Step-by-Step movement: when dragging the token, the token is moved every gridspace
         else if (movementMethod == 1) {
@@ -136,27 +156,12 @@ class IRtoken {
                 y: (newCoords.y+canvas.scene.data.grid/2)
             }
             
-            if (this.storedPosition != newCoords && token.checkCollision(newCoords2,true) == false){
+            if (this.storedPosition != newCoords && (token.checkCollision(newCoords2,true) == false || game.user.isGM)){
                 token.update(newCoords);
                 this.storedPosition = newCoords;
                 this.currentPosition = newCoords;
             }
         }
-        //Live movement: Live updating of the token's position
-        else if (movementMethod == 2) {
-        
-            let gridCoords = canvas.grid.getCenter(coords.x-canvas.scene.data.grid/2,coords.y-canvas.scene.data.grid/2)
-                let newCoords = {
-                    x: (gridCoords[0]+canvas.scene.data.grid),
-                    y: (gridCoords[1]+canvas.scene.data.grid)
-                }
-            if (token.checkCollision(newCoords)){
-                return;
-            }
-            token.update(coords);
-            this.currentPosition = coords;
-        }
-
         movementMethod = game.settings.get(moduleName,'movementMethod');
     }
 
@@ -184,13 +189,13 @@ class IRtoken {
             y: (newCoords.y+canvas.scene.data.grid/2)
         }
         if (this.controlledToken.can(game.user,"control")) await this.controlledToken.update(this.storedPosition);
-        if (this.storedPosition != newCoords && this.controlledToken.checkCollision(newCoordsCollision) == false){
-            if (this.controlledToken.can(game.user,"control")) {
+        if (this.storedPosition != newCoords ){
+            if ((this.controlledToken.can(game.user,"control") && this.controlledToken.checkCollision(newCoordsCollision) == false) || game.user.isGM) {
                 //canvas.dimensions.size *= 50;
                 this.controlledToken.update(newCoords);
                 //canvas.dimensions.size /= 50;
             }
-            else 
+            else if (this.controlledToken.can(game.user,"control") != true)
                 this.requestMovement(this.controlledToken,newCoords)
             this.storedPosition = newCoords;
         }
@@ -328,7 +333,7 @@ async function analyzeWSmessage(msg,passthrough = false){
     //Low battery warning: send notification every 5 minutes
     if (data.LB && lowBattery == false){
         lowBattery = true;
-        ui.notifications.warn("IR sensor: Low battery");
+        ui.notifications.warn("Material Plane: "+game.i18n.localize("MaterialPlane.Notifications.Battery"));
         setTimeout(function(){ 
             lowBattery = false;
         }, 300000);
@@ -409,30 +414,34 @@ async function analyzeWSmessage(msg,passthrough = false){
             if (calDialog != undefined) calDialog.close();
             let calPoints = data.D;
             let content = `
-                Single-point calibration<br><br>
-                Please calibrate each corner of you screen.<br><br>`;
+                ${game.i18n.localize("MaterialPlane.CalDialog.Singlepoint1")}<br><br>
+                ${game.i18n.localize("MaterialPlane.CalDialog.Singlepoint2")}<br><br>`;
             if (data.M == "MULTI") {
                 content = `
-                    Multipoint calibration<br><br>
-                    Please switch on the corner LEDs.<br><br>`
+                    ${game.i18n.localize("MaterialPlane.CalDialog.Multipoint1")}<br><br>
+                    ${game.i18n.localize("MaterialPlane.CalDialog.Multipoint2")}<br><br>`;
             }
             if (data.M == "OFFSET") {
                 content = `
-                    Offset calibration<br><br>
-                    Please calibrate each corner of you screen.<br><br>`
+                    ${game.i18n.localize("MaterialPlane.CalDialog.Offset1")}<br><br>
+                    ${game.i18n.localize("MaterialPlane.CalDialog.Offset2")}<br><br>`;
             }
             if (calPoints >= 0 && calPoints < 4)
-                content += calPoints + `/4 points calibrated<br>`;
+                content += calPoints + `/4 ${game.i18n.localize("MaterialPlane.CalDialog.PointsCalibrated")}<br>`;
             else if (calPoints == 4){
-                content = `Calibration completed!<br><br>Closing screen in 5 seconds<br><br>`
+                content = `
+                    ${game.i18n.localize("MaterialPlane.CalDialog.CalComplete")}<br><br>
+                    ${game.i18n.localize("MaterialPlane.CalDialog.CalClose")}<br><br>`;
                 setTimeout(function(){ calDialog.close(); }, 5000);
             }
             else if (calPoints == -1){
-                content = `Calibration Cancelled<br><br>Closing screen in 5 seconds<br><br>`
+                content = `
+                    ${game.i18n.localize("MaterialPlane.CalDialog.CalCancel")}<br><br>
+                    ${game.i18n.localize("MaterialPlane.CalDialog.CalClose")}<br><br>`;
                 setTimeout(function(){ calDialog.close(); }, 5000);
             }
             calDialog = new Dialog({
-                title: "Calibrating",
+                title: "Material Plane: "+game.i18n.localize("MaterialPlane.CalDialog.Title"),
                 content,
                 buttons: {
                 
@@ -462,7 +471,7 @@ function startWebsocket() {
     }
 
     ws.onopen = function() {
-        ui.notifications.info("IR sensor: Connected on: "+ip+':'+port);
+        ui.notifications.info("Material Plane: "+game.i18n.localize("MaterialPlane.Notifications.Connected")+ip+':'+port);
         wsOpen = true;
         clearInterval(wsInterval);
         wsInterval = setInterval(resetWS, 5000);
@@ -476,8 +485,8 @@ function startWebsocket() {
  * Try to reset the websocket if a connection is lost
  */
 function resetWS(){
-    if (wsOpen) ui.notifications.warn("IR sensor: Disconnected, attempting to reconnect");
-    else ui.notifications.warn("IR sensor: Can't connect, retrying");
+    if (wsOpen) ui.notifications.warn("Material Plane: "+game.i18n.localize("MaterialPlane.Notifications.Disconnected"));
+    else ui.notifications.warn("Material Plane: "+game.i18n.localize("MaterialPlane.Notifications.ConnectFail"));
     startWebsocket();
 }
 
@@ -534,10 +543,14 @@ function checkKeys() {
  * Attempt to open the websocket
  */
 Hooks.on('ready', ()=>{
-    
     enableModule = (game.user.name == game.settings.get(moduleName,'TargetName') && game.settings.get(moduleName,'Enable')) ? true : false;
     hideElements = game.settings.get(moduleName,'HideElements') && game.user.isGM == false;
-    if (enableModule){
+    if (game.settings.get(moduleName,'Enable') && window.location.protocol == "https:"){
+        ui.notifications.warn("Material Plane: "+game.i18n.localize("MaterialPlane.Notifications.SSL"));
+        enableModule = false;
+        return;
+    }
+    if (enableModule || game.user.isGM){
         startWebsocket();
 
         if (hideElements){
@@ -553,7 +566,7 @@ Hooks.on('ready', ()=>{
     }
 
     game.socket.on(`module.MaterialPlane`, (payload) =>{
-       // console.log(payload);
+        //console.log(payload);
         
         if (game.user.id == payload.receiverId) {
             if (payload.msgType == "moveToken"){
@@ -577,13 +590,13 @@ Hooks.on("renderSettings", (app, html) => {
  */
     const label = $(
         `<div id="MaterialPlane">
-                <h4>MaterialPlane</h4>
+                <h4>Material Plane</h4>
             </div>
             `
     );
     const btn = $(
         `<button id="MaterialPlane_Calibration" data-action="MaterialPlane_Cal" title="Calibration Menu">
-            <i class="fas fa-desktop"></i> Calibration Menu
+            <i></i> ${game.i18n.localize("MaterialPlane.CalSett.BtnName")}
         </button>`
     );
 

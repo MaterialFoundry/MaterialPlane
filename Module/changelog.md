@@ -1,13 +1,12 @@
 # Changelog Module
-### v1.0.2 - 06-10-2020
+### v1.0.2 - 26-10-2020
 Additions:
 <ul>
 <li>Localization support</li>
+<li>Added a warning that the module does not work over SSL</li>
+<li>0.7.5 support, including the new token drag vision setting</li>
 </ul>
-Other:
-<ul>
-<li>Confirmed core 0.7.3 support</li>
-</ul>
+Foundry v0.6.6 is no longer supported (it might still work, though)
 
 ### v1.0.1 - 27-09-2020
 Fixes:

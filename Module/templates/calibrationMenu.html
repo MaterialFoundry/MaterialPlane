@@ -40,15 +40,15 @@
         }
     </script>
     </head>
-    <h2>Coordinates</h2>
+    <h2>{{localize "MaterialPlane.CalSett.Coordinates"}}</h2>
      <div class="form-group options">
         <body>     
-            <table style="float:right; width:10%">
+            <table style="float:right;text-align:center">
             <tr>
-                <th>Point</th>
-                <th>X</th>
-                <th>Y</th> 
-                <th>Intensity</th>
+                <th style="width:30px">{{localize "MaterialPlane.CalSett.Point"}}</th>
+                <th style="width:30px">X</th>
+                <th style="width:30px">Y</th> 
+                <th style="width:30px">{{localize "MaterialPlane.CalSett.Intensity"}}</th>
             </tr>
             <tr>
                 <td>0</td>
@@ -79,60 +79,57 @@
             <canvas id="stage" height="250" width="250"></canvas>
 	</div>
 
-
-    <h2>Settings</h2>
+    <h2>{{localize "MaterialPlane.CalSett.Settings"}}</h2>
 
     <div class="form-group options" title="MirrorX">
-        <label>Mirror X</label>
+        <label>{{localize "MaterialPlane.CalSett.MirrorX"}}</label>
         <input type="checkbox" name="mirX" {{checked mirrorX}}>
     </div>
     <div class="form-group options" title="MirrorY">
-        <label>Mirror Y</label>
+        <label>{{localize "MaterialPlane.CalSett.MirrorY"}}</label>
         <input type="checkbox" name="mirY" {{checked mirrorY}}>
     </div>
     <div class="form-group options" title="Rot">
-        <label>Rotation</label>
+        <label>{{localize "MaterialPlane.CalSett.Rotation"}}</label>
         <input type="checkbox" name="rot" {{checked rotation}}>
     </div>
     <div class="form-group options" style="display:flex">
-        <label style="flex:7">Sensitivity</label>
+        <label style="flex:7">{{localize "MaterialPlane.CalSett.Sensitivity"}}</label>
         <input style="flex:2" type="number" min="1" max="5" value={{sens}} name="sens">
     </div>
     <div class="form-group options" style="display:flex">
-        <label style="flex:7">X Compensation</label>
+        <label style="flex:7">{{localize "MaterialPlane.CalSett.XComp"}}</label>
         <input style="flex:2" type="number" min="-128" max="127" value={{compX}} name="compX">
     </div>
     <div class="form-group options" style="display:flex">
-        <label style="flex:7">Y Compensation</label>
+        <label style="flex:7">{{localize "MaterialPlane.CalSett.YComp"}}</label>
         <input style="flex:2" type="number" min="-128" max="127" value={{compY}} name="compY">
     </div>
-    <h2>Calibration</h2>  
+    <h2>{{localize "MaterialPlane.CalSett.Calibration"}}</h2>  
     <div class="form-group options" title="Cal">
-        <label>Calibration</label>
+        <label>{{localize "MaterialPlane.CalSett.Calibration"}}</label>
         <input type="checkbox" name="cal" {{checked cal}}>
     </div>
     <div class="form-group options" title="Offset">
-        <label>Offset</label>
+        <label>{{localize "MaterialPlane.CalSett.Offset"}}</label>
         <input type="checkbox" name="offset" {{checked offset}}>
     </div>
 
     <div class="form-group">
-        <label for="CalibrationMethod">Cal method:</label>
+        <label for="CalibrationMethod">{{localize "MaterialPlane.CalSett.CalMethod"}}:</label>
         <select name="calMethod" id="action">
-            <option value="SinglePoint">Single Point</option>
-            <option value="MultiPoint">Multipoint</option>
-            <option value="Offset">Offset</option>
+            <option value="SinglePoint">{{localize "MaterialPlane.CalSett.CalMethod0"}}</option>
+            <option value="MultiPoint">{{localize "MaterialPlane.CalSett.CalMethod1"}}</option>
+            <option value="Offset">{{localize "MaterialPlane.CalSett.CalMethod2"}}</option>
         </select> 
 
-
         <button name="calBtn" type="button">
-            <i></i> Calibrate
+            <i></i> {{localize "MaterialPlane.CalSett.CalBtn"}}
         </button>
     </div>
    
-
     <button type="submit" name="submit">
-        Exit
+        {{localize "MaterialPlane.CalSett.Exit"}}
     </button>
 </form>
 

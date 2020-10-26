@@ -87,10 +87,15 @@ Please make sure you've done the following:<br>
 <li>Installed the Foundry module</li>
 <li>Set up the module settings (see below)</li>
 <li>Set up the IR sensor settings in the calibration menu, and calibrated the sensor (see below)</li>
+<li>Disabled SSL in Foundry. Unfortunately SSL is currently not supported (see below)</li>
 </ul>
 
 Once everything has been set up, the module is simple to use.<br>
 For each mini that you want to track, you need an IR base. Simple place the mini on top, making sure that the LED is always oriented in the same way (the same way you did when calibrating, see below). Simply press the switch on the base, move the mini to its new location, and release the switch.
+
+### SSL Support
+Unfortunately, the Arduino websocket library does not support SSL at the moment, this means that if you attempt to connect from a Foundry server that uses SSL to the IR sensor, you will not be able to connect. Since most people will probably use this module in a local game, this is not an issue for most people.<br>
+I will be working on a workaround.
 
 ## Module Settings
 In the module settings screen, you can find the following settings:

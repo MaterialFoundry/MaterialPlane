@@ -2,14 +2,12 @@ import * as MODULE from "../MaterialPlane.js";
 import { calibrationForm } from "./calibrationMenu.js";
 
 export const registerSettings = function() {
-console.log(MODULE.moduleName);
     
-
 /**
      * Enables the module (world)
      */
     game.settings.register(MODULE.moduleName,'Enable', {
-        name: "Enable module",
+        name: "MaterialPlane.Sett.En",
         scope: "world",
         config: true,
         default: true,
@@ -21,13 +19,13 @@ console.log(MODULE.moduleName);
      * Sets the movement method
      */
     game.settings.register(MODULE.moduleName,'movementMethod', {
-        name: "Movement Method",
-        hint: "Sets the movement method. 'Default' is the default Foundry behavior (vision updates after move), 'Step-by-Step' moves the token onto every grid you drag along, updating the vision every step",
+        name: "MaterialPlane.Sett.MovementMethod",
+        hint: "MaterialPlane.Sett.MovementMethod_Hint",
         scope: "world",
         config: true,
         type:Number,
         default:0,
-        choices:["Default","Step-by-step"],
+        choices:["MaterialPlane.Sett.MovementMethod_Default","MaterialPlane.Sett.MovementMethod_SbS"],
         onChange: x => window.location.reload()
     });
 
@@ -35,8 +33,8 @@ console.log(MODULE.moduleName);
      * Release the token after dropping
      */
     game.settings.register(MODULE.moduleName,'deselect', {
-        name: "Deselect token after drop",
-        hint: "Deselect the token when it is no longer dragged (works great in combination with the 'Hot Seat' module",
+        name: "MaterialPlane.Sett.Deselect",
+        hint: "MaterialPlane.Sett.Deselect_Hint",
         scope: "world",
         config: true,
         default: false,
@@ -48,8 +46,8 @@ console.log(MODULE.moduleName);
      * Sets if the target client is allowed to move non-owned tokens
      */
     game.settings.register(MODULE.moduleName,'EnNonOwned', {
-        name: "Non-owned movement",
-        hint: "Enable the movement of non-owned tokens",
+        name: "MaterialPlane.Sett.NonownedMovement",
+        hint: "MaterialPlane.Sett.NonownedMovement_Hint",
         scope: "world",
         config: true,
         default: true,
@@ -61,8 +59,8 @@ console.log(MODULE.moduleName);
      * Sets the name of the target client (who has the TV connected)
      */
     game.settings.register(MODULE.moduleName,'TargetName', {
-        name: "Target Name",
-        hint: "Name of the player who has the TV connected",
+        name: "MaterialPlane.Sett.TargetName",
+        hint: "MaterialPlane.Sett.TargetName_Hint",
         scope: "world",
         config: true,
         default: "Observer",
@@ -74,8 +72,8 @@ console.log(MODULE.moduleName);
      * Hides all elements on the target client, if that client is not a GM
      */
     game.settings.register(MODULE.moduleName,'HideElements', {
-        name: "Hide Display Elements",
-        hint: "Hides all display elements for the target player (if not GM). Client can click 'Ctrl' to toggle the elements",
+        name: "MaterialPlane.Sett.HideDisplay",
+        hint: "MaterialPlane.Sett.HideDisplay_Hint",
         scope: "world",
         config: true,
         default: false,
@@ -87,8 +85,8 @@ console.log(MODULE.moduleName);
      * Sets the name of the target client (who has the TV connected)
      */
     game.settings.register(MODULE.moduleName,'IP', {
-        name: "Sensor Module IP",
-        hint: "Fill in the IP address of the sensor module",
+        name: "MaterialPlane.Sett.SensorIP",
+        hint: "MaterialPlane.Sett.SensorIP_Hint",
         scope: "world",
         config: true,
         default: "192.168.1.189",

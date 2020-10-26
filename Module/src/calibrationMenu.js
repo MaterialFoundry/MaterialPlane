@@ -35,7 +35,7 @@ export class calibrationForm extends FormApplication {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             id: "MaterialPlane_CalMenu",
-            title: "Calibration Menu",
+            title: "Material Plane: "+game.i18n.localize("MaterialPlane.CalSett.Title"),
             template: "./modules/MaterialPlane/templates/calibrationMenu.html",
             classes: ["sheet"],
             width: 500
@@ -59,7 +59,6 @@ export class calibrationForm extends FormApplication {
         this.offsetEn = offsetEn;
         this.compX = compX;
         this.compY = compY;
-        //console.log("Mx: "+Mx+" My: "+My+" rot: "+R+" sensitivity: "+S);
     }
 
     _updateObjects(event, formData){

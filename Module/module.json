@@ -8,8 +8,8 @@
       "./MaterialPlane.js"
     ],
     "socket": true,
-    "minimumCoreVersion": "0.6.6",
-    "compatibleCoreVersion": "0.7.3",
+    "minimumCoreVersion": "0.7.5",
+    "compatibleCoreVersion": "0.7.5",
     "languages": [
       {
         "lang": "en",

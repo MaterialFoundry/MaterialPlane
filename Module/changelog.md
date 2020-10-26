@@ -1,4 +1,14 @@
 # Changelog Module
+### v1.0.2 - 06-10-2020
+Additions:
+<ul>
+<li>Localization support</li>
+</ul>
+Other:
+<ul>
+<li>Confirmed core 0.7.3 support</li>
+</ul>
+
 ### v1.0.1 - 27-09-2020
 Fixes:
 <ul>

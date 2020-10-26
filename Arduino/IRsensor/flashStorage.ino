@@ -74,6 +74,17 @@ void storeCompY(){
 }
 
 void startupEEPROM(){
+  if (EEPROM.read(CAL_EN_ADDR) == 255) {
+    storeCalEn();
+    storeOffsetEn();
+    storeMirrorX();
+    storeMirrorY();
+    storeRotation();
+    storeSensitivity();
+    storeCompX();
+    storeCompY();
+    return;
+  }
   readCal();
   cal.calculateHomographyMatrix();
   readOffset();

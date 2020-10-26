@@ -11,10 +11,10 @@
  * User settings
  *****************************************************************************************************************/
 //Fill in your SSID and password
-#define SSID  "Your SSID"
-#define PASS  "Your Password"
+#define SSID  "YOUR SSID"
+#define PASS  "YOUR PASSWORD"
 
-//If using the complete sensor unit, leave this, otherwise comment it out (place // before the line)
+//If using the complete sensor unit, leave this, otherwise comment it out (place // at the start of the line)
 #define FULL_SENSOR
 
 /*****************************************************************************************************************
@@ -156,6 +156,7 @@ void setup() {
   //Initialize wifi and websocket
   WiFiMulti.addAP(SSID,PASS);
   while(WiFiMulti.run() != WL_CONNECTED) delay(100);
+
   webSocket.begin();
   webSocket.onEvent(webSocketEvent);
 

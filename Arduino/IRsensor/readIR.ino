@@ -40,6 +40,7 @@ void readSensor(){
       data_buf[i] = Wire.read();
       i++;
   }
+  
   //Reset all stored points
   for (int i=0; i<4; i++){
     Ix[i] = 1023;
@@ -97,8 +98,8 @@ void readSensor(){
  */
 void setSensitivity(uint8_t sens){
   uint8_t p0, p1, p2, p3;
-  sensitivity = sens;
   if (sens > 4) sens = 4;
+  sensitivity = sens;
   p0 = 0xFF;
   p2 = 0x00;
   p3 = 0x00;

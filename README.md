@@ -1,3 +1,6 @@
+I created a <a href="https://discord.gg/4Fezhue">Discord server</a> to discuss this and other hardware-based Foundry modules. It's still very new and empty, but feel free to join.<br>
+<br>
+
 <b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br>
 It is also possible that the hardware might change, for improved mini detection. I'll probably keep supporting the current version, but I can't promise anything.<br>
 If you're uncomfortable with this, please wait until the project has been developed a bit further.</b>

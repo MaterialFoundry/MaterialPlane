@@ -1,4 +1,4 @@
-I created a <a href="https://discord.gg/4Fezhue">Discord server</a> to discuss this and other hardware-based Foundry modules. It's still very new and empty, but feel free to join.<br>
+I created a <a href="https://discord.gg/3hd4G6TkmA">Discord server</a> to discuss this and other hardware-based Foundry modules. Feel free to join if you'd like to be updated on this module.<br>
 <br>
 
 <b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br>

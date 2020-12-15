@@ -1,6 +1,7 @@
-I created a <a href="https://discord.gg/3hd4G6TkmA">Discord server</a> to discuss this and other hardware-based Foundry modules. Feel free to join if you'd like to be updated on this module.<br>
+I created the <a href="https://discord.gg/3hd4G6TkmA">Material Foundry</a> Discord server to discuss this and other hardware-based Foundry modules. Feel free to join if you'd like to be updated on this module.<br>
 <br>
-
+<b>I'm currently working on new and improved hardware. Unless you really want to use Material Plane right now, I'd suggest you wait a bit. Updates can be found on the Material Foundry Discord server.</b><br>
+<br>
 <b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br>
 It is also possible that the hardware might change, for improved mini detection. I'll probably keep supporting the current version, but I can't promise anything.<br>
 If you're uncomfortable with this, please wait until the project has been developed a bit further.</b>

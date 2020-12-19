@@ -213,6 +213,9 @@ If you have any suggestions or bugs to report, feel free to contact me on Discor
 
 ## Credits
 <b>Author:</b> Cristian Deenen (Cris#6864 on Discord)<br>
+<br>
+Please consider supporting me on <a href="https://www.patreon.com/materialfoundry">Patreon</a>, and feel free to join the Material Foundry <a href="https://discord.gg/3hd4G6TkmA">Discord</a> server.
+
 
 ## Abandonment
 Abandoned modules are a (potential) problem for Foundry, because users and/or other modules might rely on abandoned modules, which might break in future Foundry updates.<br>

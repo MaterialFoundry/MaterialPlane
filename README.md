@@ -1,9 +1,9 @@
 I created the <a href="https://discord.gg/3hd4G6TkmA">Material Foundry</a> Discord server to discuss this and other hardware-based Foundry modules. Feel free to join if you'd like to be updated on this module.<br>
 <br>
-<b>Both the module and the Arduino firmware are very much outdated, but this will change soon (April 2021)</b>
+<b>Both the module and the Arduino firmware are very much outdated since I've been focusing on developing new hardware, but this will change soon (April 2021)</b>
 
 <b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br>
-It is also possible that the hardware might change, for improved mini detection. I'll probably keep supporting the current version, but I can't promise anything.<br>
+The hardware is currently in the process of getting an upgrade. I'll probably keep supporting the current version, but I can't promise anything.<br>
 If you're uncomfortable with this, please wait until the project has been developed a bit further.</b>
 
 ### Pre-Build Kits
@@ -11,7 +11,6 @@ It is possible to build the required hardware yourself, but there might be peopl
 <br>
 <b>I'm currently working on new and improved hardware for the pre-build kit. Unless you really want to use Material Plane right now, I'd suggest you wait a bit. Updates can be found on the Material Foundry Discord server, and a summary can be found here:</b><br>
 ### <a href="https://github.com/CDeenen/MaterialPlane/wiki/Current-State-of-Material-Plane">Current state of Material Plane</a>
-<br>
 
 # Material Plane
 Material Plane is a <a href="https://foundryvtt.com/">Foundry VTT</a> module that allows physical minis to be tracked by Foundry when using a horizontally mounted TV. This allows you to bring the joy of physical minis into Foundry.<br>

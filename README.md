@@ -1,6 +1,6 @@
 I created the <a href="https://discord.gg/3hd4G6TkmA">Material Foundry</a> Discord server to discuss this and other hardware-based Foundry modules. Feel free to join if you'd like to be updated on this module.<br>
 <br>
-<b>Both the module and the Arduino firmware are very much outdated since I've been focusing on developing new hardware, but this will change soon (April 2021)</b>
+<b>Update April 2021: Both the module and the Arduino firmware are very much outdated since I've been focusing on developing new hardware, but this will change soon</b>
 
 <b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br>
 The hardware is currently in the process of getting an upgrade. I'll probably keep supporting the current version, but I can't promise anything.<br>

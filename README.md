@@ -11,7 +11,7 @@ The system consists of an IR sensor, and IR enabled mini bases. These bases cont
 <br>
 You can use any TV, monitor or projector for this.
 
-[![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Module/img/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
+[![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Img/Other/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
 
 # Instructions and More Info
 Instructions and more info can be found in the <a href="https://github.com/CDeenen/MaterialPlane/wiki">wiki</a> (still a work in progress).<br>

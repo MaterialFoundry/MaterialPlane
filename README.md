@@ -14,8 +14,9 @@ You can use any TV, monitor or projector for this.
 [![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Img/Other/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
 
 # Instructions and More Info
-Instructions and more info can be found in the <a href="https://github.com/CDeenen/MaterialPlane/wiki">wiki</a> (still a work in progress).<br>
-Everything related to the hardware, including firmware and 3D models can be found <a href="https://github.com/CDeenen/MaterialPlane_Hardware">here</a><br>
+Instructions and more info on DIY hardware can be found in the <a href="https://github.com/CDeenen/MaterialPlane/wiki">wiki</a> (still a work in progress).<br>
+Instructions and more info on the beta hardware can be found <a href="https://github.com/CDeenen/MaterialPlane/wiki/Beta-Hardware-Guide">here</a>.<br>
+Firmware and 3D models can be found <a href="https://github.com/CDeenen/MaterialPlane_Hardware">here</a><br>
 The repository for the Foundry module can be found <a href="https://github.com/CDeenen/MaterialPlane_Foundry">here</a>
 
 ### Pre-Build Kits

@@ -25,7 +25,7 @@ It is possible to build the required hardware yourself, but there might be peopl
 <b>I'm currently working on new and improved hardware for the pre-build kit. Unless you really want to use Material Plane right now, I'd suggest you wait a bit. Updates can be found on the Material Foundry Discord server, and a summary can be found here:</b><br>
 
 ## Software Versions & Module Incompatibilities
-<b>Foundry VTT:</b> 0.8.6 - 0.8.9<br>
+<b>Foundry VTT:</b> v8 - v9<br>
 <b>Module Incompatibilities:</b> When moving tokens, Foundry's click and drag system is bypassed. So modules that depend on that functionality might not work.<br>
 
 ## Feedback

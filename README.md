@@ -17,7 +17,7 @@ There is currently experimental support for touch screen devices. Either capacit
 [![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Img/Other/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
 
 # Instructions and More Info
-<a href="https://github.com/CDeenen/MaterialPlane/wiki">Wiki</a>.<br>
+<a href="https://github.com/CDeenen/MaterialPlane/wiki">Wiki</a><br>
 <a href="https://github.com/CDeenen/MaterialPlane/wiki/DIY-Hardware-Guide">DIY hardware guide</a><br>
 <a href="https://github.com/CDeenen/MaterialPlane/wiki/Beta-Hardware-Guide">Beta hardware guide</a><br>
 <a href="https://github.com/CDeenen/MaterialPlane/wiki/Touch-Screen-Guide">Touch screen guide</a><br>

@@ -14,10 +14,12 @@ You can use any TV, monitor or projector for this.
 [![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Img/Other/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
 
 # Instructions and More Info
-Instructions and more info on DIY hardware can be found in the <a href="https://github.com/CDeenen/MaterialPlane/wiki">wiki</a> (still a work in progress).<br>
-Instructions and more info on the beta hardware can be found <a href="https://github.com/CDeenen/MaterialPlane/wiki/Beta-Hardware-Guide">here</a>.<br>
-Firmware and 3D models can be found <a href="https://github.com/CDeenen/MaterialPlane_Hardware">here</a><br>
-The repository for the Foundry module can be found <a href="https://github.com/CDeenen/MaterialPlane_Foundry">here</a>
+<a href="https://github.com/CDeenen/MaterialPlane/wiki">Wiki</a>.<br>
+<a href="https://github.com/CDeenen/MaterialPlane/wiki/DIY-Hardware-Guide">DIY hardware guide</a><br>
+<a href="https://github.com/CDeenen/MaterialPlane/wiki/Beta-Hardware-Guide">Beta hardware guide</a><br>
+<a href="https://github.com/CDeenen/MaterialPlane/wiki/Touch-Screen-Guide">Touch screen guide</a><br>
+<a href="https://github.com/CDeenen/MaterialPlane_Hardware">Firmware and 3D models</a><br>
+<a href="https://github.com/CDeenen/MaterialPlane_Foundry">Foundry module repository</a>
 
 ### Pre-Build Kits
 It is possible to build the required hardware yourself, but there might be people interested in buying a pre-build kit, consisting of a sensor module and some IR bases. I currently do not sell anything, but that will change in the future.<br>

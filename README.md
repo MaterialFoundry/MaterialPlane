@@ -7,9 +7,12 @@ If you're uncomfortable with this, please wait until the project has been develo
 # Material Plane
 Material Plane is a <a href="https://foundryvtt.com/">Foundry VTT</a> module that allows physical minis to be tracked by Foundry when using a horizontally mounted TV. This allows you to bring the joy of physical minis into Foundry.<br>
 <br>
+There are currently 2 ways to track minis:<br>
+<b>Material Plane sensor</b><br>
 The system consists of an IR sensor, and IR enabled mini bases. These bases contain IR LEDs that are tracked by the sensor. The sensor then relays this information to foundry over WiFi, where the information is interpreted as token movement.<br>
-<br>
-You can use any TV, monitor or projector for this.
+You can use any TV, monitor or projector for this.<br>
+<b>Touch Screen</b><br>
+There is currently experimental support for touch screen devices. Either capacitive touch screens or normal TVs with an IR touch frame can work.<br>
 
 [![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Img/Other/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
 

@@ -27,7 +27,7 @@ There is currently experimental support for touch screen devices. Either capacit
 ### Pre-Build Kits
 It is possible to build the required hardware yourself, but there might be people interested in buying a pre-build kit, consisting of a sensor module and some IR bases. I currently do not sell anything, but that will change in the future.<br>
 <br>
-<b>I'm currently working on new and improved hardware for the pre-build kit. Unless you really want to use Material Plane right now, I'd suggest you wait a bit. Updates can be found on the Material Foundry Discord server, and a summary can be found here:</b><br>
+<b>I'm currently working on new and improved hardware for the pre-build kit. Unless you really want to use Material Plane right now, I'd suggest you wait a bit. Updates can be found on the Material Foundry Discord server, and a summary can be found <a href="https://github.com/CDeenen/MaterialPlane/wiki/Current-State-of-Material-Plane">here</a></b><br>
 
 ## Software Versions & Module Incompatibilities
 <b>Foundry VTT:</b> v8 - v9<br>

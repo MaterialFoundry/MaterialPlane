@@ -1,8 +1,7 @@
-<b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br>
-The hardware is currently in the process of getting an upgrade. I'll probably keep supporting the current version, but I can't promise anything.<br>
-If you're uncomfortable with this, please wait until the project has been developed a bit further.</b>
-
-### <a href="https://github.com/CDeenen/MaterialPlane/wiki/Current-State-of-Material-Plane">Current state of Material Plane</a>
+<b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br></b>
+<br>
+You can currently place a pre-order for pre-build hardware from my webshop: <a href="https://www.materialfoundry.nl/">https://www.materialfoundry.nl/</a><br>
+(Until the 19th of June 2023 only accessible to <a href="https://www.patreon.com/materialfoundry">Patrons</a>)<br>
 
 # Material Plane
 Material Plane is a <a href="https://foundryvtt.com/">Foundry VTT</a> module that allows physical minis to be tracked by Foundry when using a horizontally mounted TV. This allows you to bring the joy of physical minis into Foundry.<br>
@@ -13,6 +12,8 @@ The system consists of an IR sensor, and IR enabled mini bases. These bases cont
 You can use any TV, monitor or projector for this.<br>
 <b>Touch Screen</b><br>
 There is currently experimental support for touch screen devices. Either capacitive touch screens or normal TVs with an IR touch frame can work.<br>
+<br>
+Please take a look at <a href="https://github.com/CDeenen/MaterialPlane/wiki/Mini-Tracking-Devices-Comparison">this</a> page for a comparison between the Material Plane sensor and touch screen.<br>
 
 [![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Img/Other/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
 
@@ -24,13 +25,8 @@ There is currently experimental support for touch screen devices. Either capacit
 <a href="https://github.com/CDeenen/MaterialPlane_Hardware">Firmware and 3D models</a><br>
 <a href="https://github.com/CDeenen/MaterialPlane_Foundry">Foundry module repository</a>
 
-### Pre-Build Kits
-It is possible to build the required hardware yourself, but there might be people interested in buying a pre-build kit, consisting of a sensor module and some IR bases. I currently do not sell anything, but that will change in the future.<br>
-<br>
-<b>I'm currently working on new and improved hardware for the pre-build kit. Unless you really want to use Material Plane right now, I'd suggest you wait a bit. Updates can be found on the Material Foundry Discord server, and a summary can be found <a href="https://github.com/CDeenen/MaterialPlane/wiki/Current-State-of-Material-Plane">here</a></b><br>
-
 ## Software Versions & Module Incompatibilities
-<b>Foundry VTT:</b> v8 - v9<br>
+<b>Foundry VTT:</b> v10<br>
 <b>Module Incompatibilities:</b> When moving tokens, Foundry's click and drag system is bypassed. So modules that depend on that functionality might not work.<br>
 
 ## Feedback

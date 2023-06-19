@@ -1,7 +1,6 @@
 <b>This module requires external hardware that you probably don't have lying around, which means that you have to spend (at least) $40 on getting this module to work. The module is still in development, and probably contains bugs. Make sure that you're willing to risk spending money on something that might not work as intended.<br></b>
 <br>
 You can currently place a pre-order for pre-build hardware from my webshop: <a href="https://www.materialfoundry.nl/">https://www.materialfoundry.nl/</a><br>
-(Until the 19th of June 2023 only accessible to <a href="https://www.patreon.com/materialfoundry">Patrons</a>)<br>
 
 # Material Plane
 Material Plane is a <a href="https://foundryvtt.com/">Foundry VTT</a> module that allows physical minis to be tracked by Foundry when using a horizontally mounted TV. This allows you to bring the joy of physical minis into Foundry.<br>

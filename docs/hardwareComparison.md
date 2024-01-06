@@ -3,7 +3,7 @@ There are a few options when it comes down to the tracking of physical miniature
 
 ## Options
 
-### Material Plane DIY Hardware
+### Material Plane Hardware
 
 The first option would be to use a Material Plane sensor. The setup consists of 2 parts:
 
@@ -33,7 +33,7 @@ Big displays with built-in capacitive touch screens are hard to find and expensi
 Other forms of interaction (besides moving minis) is possible, but is limited by the algoritm that distinguishes minis from other touches.<br>
 
 ## Comparison
-| |DIY MP|Production MP|IR Touch|Capacitive Touch|
+| |DIY|Production|IR Touch|Capacitive Touch|
 |-|-|-|-|-|
 |Max nr of minis on TV|Unlimited|Unlimited|10<sup>1</sup>|Unlimited<sup>2</sup>|
 |Max nr of simultaneously moved minis<sup>3</sup>|4|16|10<sup>1</sup>|10|
@@ -44,7 +44,7 @@ Other forms of interaction (besides moving minis) is possible, but is limited by
 |Mini movement method|Button press on base|Touch sensors on left and right side of the base|Raise a mini and then place it down again before moving the mini|Touching the conductive part of the mini<sup>2</sup>|
 |Mini identification<sup>9</sup>|Location based|ID based|Location based|Location based|
 |Portability|Can be easily transported somewhere else, to be used on a different display|Can be easily transported somewhere else, to be used on a different display|Requires the display (or touch frame) to be transported|Requires the display to be transported|
-|Availablility|Must be built by yourself, some parts can be difficult to get|[Webshop](https://www.materialfoundry.nl/)|Touch frames are easy to find online|TVs with built-in capacitive touch are expensive and difficult to find, touch foil is difficult to find (price unknown)|
+|Availablility|Must be built by yourself, some parts can be difficult to source|[Webshop](https://www.materialfoundry.nl/)|Touch frames are easy to find online|TVs with built-in capacitive touch are expensive and difficult to find, touch foil is difficult to find (price unknown)|
 |Price (excluding display)|$50 - $100|$150-$300|$150 - $300|Unknown, but probably high|
 |Current state|Functional|Functional|Experimental|Experimental|
 

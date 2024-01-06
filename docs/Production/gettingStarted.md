@@ -3,3 +3,9 @@ The Material Plane production hardware is one of the hardware options for Materi
 It comes pre-assembled and can be bought from the [Material Foundry webshop](https://www.materialfoundry.nl/).
 
 Before ordering, please carefully read the [requirements](requirements.md) to make sure you can use the hardware, and the read the [hardware overview](HardwareOverview/sensor.md) section so you know what hardware is available and what you will need.
+
+The table of contents on the left is ordered in a way that you should start from the top and move your way down, but below you will find a short description of the steps you will need to take to get started:
+
+1. [placeholder]
+2. [placeholder]
+3. [placeholder]

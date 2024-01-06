@@ -1,4 +1,4 @@
-{%set variant = 'production' %}
+{%set variant = 'diy' %}
 
 # Requirements
 The requirements for using Material Plane using the DIY hardware can be divided into 4 parts:

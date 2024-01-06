@@ -25,7 +25,7 @@ Please take a look at <a href="https://github.com/CDeenen/MaterialPlane/wiki/Min
 <a href="https://github.com/CDeenen/MaterialPlane_Foundry">Foundry module repository</a>
 
 ## Software Versions & Module Incompatibilities
-<b>Foundry VTT:</b> v10<br>
+<b>Foundry VTT:</b> v10 & v11<br>
 <b>Module Incompatibilities:</b> When moving tokens, Foundry's click and drag system is bypassed. So modules that depend on that functionality might not work.<br>
 
 ## Feedback

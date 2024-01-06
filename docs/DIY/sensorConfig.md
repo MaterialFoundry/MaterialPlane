@@ -1,4 +1,4 @@
-{% set variant = 'DIY' %}
+{% set variant = 'diy' %}
 
 # Sensor Configuration
 

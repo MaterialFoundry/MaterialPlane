@@ -34,12 +34,38 @@ nav:
     - Usage: 
       - Bases: Production/Usage/bases.md
       - Pen: Production/Usage/pen.md
+    - Troubleshooting: Production/troubleshooting.md
+  - DIY Hardware: 
+    - Getting Started: DIY/gettingStarted.md
+    - Requirements: DIY/requirements.md
+    - Hardware Overview: DIY/hardwareOverview.md
+    - Build Instructions:
+      - Sensor: DIY/BuildInstructions/sensor.md
+      - Base: DIY/BuildInstructions/base.md
+    - Updating Firmware: DIY/sensorUpdating.md
+    - Sensor Positioning: 
+      - Mounting: DIY/SensorPositioning/sensorMounting.md
+      - Sensor-to-Display Distance: DIY/SensorPositioning/sensorDistance.md
+      - Sensor Orientation: DIY/SensorPositioning/sensorOrientation.md
+    - Sensor Configuration: 
+      - Connecting to WiFi: DIY/SensorConfiguration/sensorConnecting.md
+      - Webserver: DIY/SensorConfiguration/webserver.md
+      - Sensor Settings: DIY/SensorConfiguration/sensorSettings.md
+    - VTT Configuration:
+      - Foundry VTT:
+        - Installing the Module: Shared/foundryInstall.md
+        - Foundry Setup: Shared/foundrySetup.md
+        - Connecting to the Sensor: Shared/foundryConnection.md
+        - Module Configuration: DIY/foundryConfig.md
+    - Sensor Calibration: DIY/calibration.md
+    - Usage: DIY/usage.md
+    - Troubleshooting: DIY/troubleshooting.md
   - Touch:
-    - Touch: Touch/touch.md
-    - Requirements: Touch/requirements.md
     - Getting Started: Touch/gettingStarted.md
+    - Requirements: Touch/requirements.md
     - Foundry Configuration: Touch/foundryConfig.md
     - Usage: Touch/usage.md
+    - Troubleshooting: Touch/troubleshooting.md
   - Display Selection: displaySelection.md
   - Hardware Comparison: hardwareComparison.md
   - FAQ: faq.md

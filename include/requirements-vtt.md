@@ -1,0 +1,3 @@
+Material Plane runs on a virtual tabletop. Currently only [Foundry VTT](https://foundryvtt.com/) is supported.
+
+To use Foundry VTT, you need to purchase a license, and you need some way to host the Foundry server. For information on how to setup a Foundry VTT server, please refer to the [Foundry VTT Knowledge Base](https://foundryvtt.com/kb/). Alternatively, you could using a hosting service such as [The Forge](https://forge-vtt.com/), [Molten Hosting](https://moltenhosting.com/) or [Foundry Server](https://www.foundryserver.com/).

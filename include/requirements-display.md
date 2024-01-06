@@ -1,0 +1,4 @@
+You'll need a TV, or some other display (monitor/projector) onto which the virtual tabletop is displayed.
+
+For the Material Plane hardware (both DIY and production) you do have to consider the size of your TV, due to the limited detection angle of the sensor, see [Display-Sensor Distance section](requirements.md#display-sensor-distance) below.
+Virtually any display will work, however, some older models (especially plasma and LCD displays with CCFL backlight) can emit infrared noise which might interfere with the sensor. To remedy this, you could add infrared-blocking foil to the display. Modern displays should not cause any issues.

@@ -1,4 +1,4 @@
-This page discusses all settings related to how the sensor detects bases and handles the data related to this.These settings can be accessed through the Foundry [Module Configuration screen](../foundryConfig.md#module-configuration) or the [webserver](webserver.md).
+This page discusses all settings related to how the sensor detects bases and handles the data related to this.These settings can be accessed through the Foundry [Module Configuration screen](../Foundry/foundryConfig.md#module-configuration) or the [webserver](webserver.md).
 
 The tab is divided into multiple sections which can be expanded or collapsed.
 

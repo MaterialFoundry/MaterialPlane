@@ -1,11 +1,11 @@
 You can access the module configuration by opening the 'Game Settings' sidebar tab (on the right of the screen, cog icon), and clicking the 'Material Plane Configuration' button.
 
-![Screenshot](../img/foundry/Foundry_Module_Config_Btn.png)
+![Screenshot](../../img/foundry/Foundry_Module_Config_Btn.png)
 
 The configuration consists of multiple tabs:
 
 ## General
-![Screenshot](../img/foundry/Foundry_Module_General.png){align=right width=50%}
+![Screenshot](../../img/foundry/Foundry_Module_General.png){align=right width=50%}
 This tab is used for general settings for the module.
 
 * <b>Active User:</b> Sets the active user for the module. This user will be the one displayed on the display.

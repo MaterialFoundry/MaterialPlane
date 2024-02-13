@@ -26,10 +26,10 @@ nav:
     - Base & Pen Configuration: Production/basePenConfig.md
     - VTT Configuration:
       - Foundry VTT:
-        - Installing the Module: Production/foundryInstall.md
-        - Foundry Setup: Production/foundrySetup.md
-        - Connecting to the Sensor: Production/foundryConnection.md
-        - Module Configuration: Production/foundryConfig.md
+        - Installing the Module: Production/Foundry/foundryInstall.md
+        - Foundry Setup: Production/Foundry/foundrySetup.md
+        - Connecting to the Sensor: Production/Foundry/foundryConnection.md
+        - Module Configuration: Production/Foundry/foundryConfig.md
     - Sensor Calibration: Production/calibration.md
     - Usage: 
       - Bases: Production/Usage/bases.md
@@ -40,7 +40,9 @@ nav:
     - Requirements: DIY/requirements.md
     - Hardware Overview: DIY/hardwareOverview.md
     - Build Instructions:
-      - Sensor: DIY/BuildInstructions/sensor.md
+      - Sensor: 
+        - Full: DIY/BuildInstructions/sensorFull.md
+        - Basic: DIY/BuildInstructions/sensorBasic.md
       - Base: DIY/BuildInstructions/base.md
     - Updating Firmware: DIY/Updating/sensorUpdating.md
     - Sensor Positioning: 
@@ -53,20 +55,24 @@ nav:
       - Sensor Settings: DIY/SensorConfiguration/sensorSettings.md
     - VTT Configuration:
       - Foundry VTT:
-        - Installing the Module: DIY/foundryInstall.md
-        - Foundry Setup: DIY/foundrySetup.md
-        - Connecting to the Sensor: DIY/foundryConnection.md
-        - Module Configuration: DIY/foundryConfig.md
+        - Installing the Module: DIY/Foundry/foundryInstall.md
+        - Foundry Setup: DIY/Foundry/foundrySetup.md
+        - Connecting to the Sensor: DIY/Foundry/foundryConnection.md
+        - Module Configuration: DIY/Foundry/foundryConfig.md
     - Sensor Calibration: DIY/calibration.md
     - Usage: DIY/usage.md
     - Troubleshooting: DIY/troubleshooting.md
   - Touch:
     - Getting Started: Touch/gettingStarted.md
-    - Requirements: Touch/requirements.md
-    - Foundry Configuration: Touch/foundryConfig.md
-    - Usage: Touch/usage.md
-    - Troubleshooting: Touch/troubleshooting.md
-  - Display Selection: displaySelection.md
+    #- Requirements: Touch/requirements.md
+    #- Foundry Configuration: Touch/foundryConfig.md
+    #- Usage: Touch/usage.md
+    #- Troubleshooting: Touch/troubleshooting.md
+  - Display Considerations:
+    - Display Considerations: DisplayConsiderations/considerations.md
+    - Display Type: DisplayConsiderations/type.md
+    - Mounting: DisplayConsiderations/mounting.md
+    - Protection: DisplayConsiderations/protection.md
   - Hardware Comparison: hardwareComparison.md
   - FAQ: faq.md
 theme:

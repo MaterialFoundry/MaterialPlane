@@ -5,6 +5,8 @@ The sensor can be updated in 4 ways:
 * Using the sensor webserver
 * Using the Arduino IDE (USB or WiFi)
 
+{% if variant == 'diy' %}<b>The first time uploading the firmware to the sensor, you must upload using a USB cable (either using Material Companion or the Arduino IDE).</b>{% endif %}
+
 The sensor has 2 different things that require separate updates:
 
 * <b>Firmware:</b> This is the code that is responsible for almost everything the sensor does, except for the webserver

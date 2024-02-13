@@ -45,8 +45,8 @@ Other forms of interaction (besides moving minis) is possible, but is limited by
 |Mini identification<sup>9</sup>|Location based|ID based|Location based|Location based|
 |Portability|Can be easily transported somewhere else, to be used on a different display|Can be easily transported somewhere else, to be used on a different display|Requires the display (or touch frame) to be transported|Requires the display to be transported|
 |Availablility|Must be built by yourself, some parts can be difficult to source|[Webshop](https://www.materialfoundry.nl/)|Touch frames are easy to find online|TVs with built-in capacitive touch are expensive and difficult to find, touch foil is difficult to find (price unknown)|
-|Price (excluding display)|$50 - $100|$150-$300|$150 - $300|Unknown, but probably high|
-|Current state|Functional|Functional|Experimental|Experimental|
+|Price (excluding display)|$50 - $100|$200-$350|$150 - $300|Unknown, but probably high|
+|Current state|Functional|Functional|Experimental (broken in Foundry v11)|Experimental (broken in Foundry v11)|
 
 <sup>1</sup> This is a theoretical limit, issues might occur before them due to the shadow effect, as described above<br>
 <sup>2</sup> Depends on how the minis are detected, see above<br>

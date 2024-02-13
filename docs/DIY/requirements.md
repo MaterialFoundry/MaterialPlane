@@ -11,7 +11,7 @@ The requirements for using Material Plane using the DIY hardware can be divided 
 ## Material Plane Hardware
 The DIY hardware consists of 2 items:
 
-* [Sensor](BuildInstructions/sensor.md)
+* [Sensor](BuildInstructions/sensorFull.md)
 * One [Bases](BuildInstructions/base.md) for each mini you want to track
 
 You will need to build this hardware yourself (click on the links above for instructions), the requirements for building them is included in the instructions.

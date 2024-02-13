@@ -2,10 +2,21 @@
 The Material Plane production hardware is one of the hardware options for Material Plane to track minis on a display.<br>
 It comes pre-assembled and can be bought from the [Material Foundry webshop](https://www.materialfoundry.nl/).
 
-Before ordering, please carefully read the [requirements](requirements.md) to make sure you can use the hardware, and the read the [hardware overview](HardwareOverview/sensor.md) section so you know what hardware is available and what you will need.
-
 The table of contents on the left is ordered in a way that you should start from the top and move your way down, but below you will find a short description of the steps you will need to take to get started:
 
-1. [placeholder]
-2. [placeholder]
-3. [placeholder]
+1. [Make sure you know what the requirements are for using Material Plane](requirements.md)
+2. [Figure out what hardware you need](HardwareOverview/sensor.md)
+4. [Order the hardware](https://www.materialfoundry.nl/)
+5. Wait way too long for the hardware to arrive :')
+6. [Update the sensor firmware](Updating/sensorUpdating.md)
+7. [Figure out the optimal sensor mounting method and position](SensorPositioning/sensorMounting.md)
+8. [Connect the sensor to your WiFi network](SensorConfiguration/sensorConnecting.md)
+9. [Configure the sensor](SensorConfiguration/sensorSettings.md)
+10. [Install and configure the VTT module](Foundry/foundryInstall.md)
+11. [Calibrate the sensor](calibration.md)
+12. [Learn how to properly use the module](Usage/bases.md)
+
+Please check the [troubleshooting](troubleshooting.md) page if you run into any issues.
+
+If you encounter any bugs or wish to request new features, please contact me on Discord (@materialfoundry/@Cris) or post an issue on [GitHub](https://github.com/MaterialFoundry/MaterialPlane/issues).<br>
+Consider joining the [Material Foundry Discord Server](https://discord.com/invite/3hd4G6TkmA).

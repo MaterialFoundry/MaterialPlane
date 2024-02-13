@@ -1,7 +1,7 @@
 To function properly, the sensor needs to know the position of your display. To do this, a calibration procedure is required where you tell the sensor where the 4 corners of your display are.<br>
 <br>
 ![Screenshot](../img/foundry/Foundry_Cal_Btns.png){align=right}
-Calibration is performed in the [Sensor](foundryConfig.md#sensor) tab of the 'Material Plane Configuration' screen.<br>
+Calibration is performed in the [Sensor](Foundry/foundryConfig.md#sensor) tab of the 'Material Plane Configuration' screen.<br>
 Under the 'Calibration' section you can find 2 checkboxes. These checkboxes allow you to enable or disable the calibration and calibration offset. Switching them off will result in the sensor outputting raw position data, switching them on will result in the sensor outputting calibrated data (assuming you've performed the calibration procedure).<br>
 <br>
 Below that there's a 'Calibrate' button that will start the calibration procedure.

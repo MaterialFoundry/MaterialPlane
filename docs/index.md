@@ -9,7 +9,7 @@ Click the links below or at the top of the page to navigate the documentation:
 * [Production Hardware](Production/gettingStarted.md)
 * [DIY Hardware](DIY/gettingStarted.md)
 * [Touch](Touch/gettingStarted.md)
-* [Display Selection](displaySelection.md)
+* [Display Considerations](DisplayConsiderations/considerations.md)
 * [Hardware Comparison](hardwareComparison.md)
 * [FAQ](faq.md)
 

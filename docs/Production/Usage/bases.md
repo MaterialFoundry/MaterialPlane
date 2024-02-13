@@ -77,7 +77,7 @@ From left to right:
 ## Token Detection
 There are 2 ways Material Plane can detect which token has to be moved when a base is moved:
 
-The main method is to use the id of the base, which can be linked to a specific token or actor. This means that whenever a specific base is moved, it will only move the linked token or actor (see [Base Setup](../foundryConfig.md#base-setup) for more info on how to configure that).
+The main method is to use the id of the base, which can be linked to a specific token or actor. This means that whenever a specific base is moved, it will only move the linked token or actor (see [Base Setup](../Foundry/foundryConfig.md#base-setup) for more info on how to configure that).
 
 A secondary, fallback method is to use the location of the base. Whenever a base is moved, Material Plane checks if there are any tokens close enough. If there are, it will pick the nearest (that is allowed to be moved) and move that token. The disadvantage of this method is that if any interruption occurs, the token might be dropped. It can also result in the wrong token being moved if multiple tokens are close to each other.
 

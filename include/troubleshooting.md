@@ -19,8 +19,8 @@ Similarly, if you find a row that does not mention a possible cause, it relates 
 |                                                   |                                       | Prevent direct sunlight on the sensor/display/table
 |                                                   |                                       | Make sure there are no lights shining/reflecting directly into the sensor
 | Sensor can't detect complete display              | Sensor too close to the display       | Move sensor further back                  | [link](SensorPositioning/sensorDistance.md)               |
-{% if variant == 'production' %}|                                                   |                                       | Install a wide-angle lens                 | [link](SensorConfiguration/sensorLens.md)                 |
-{% endif %}| Sensor won't charge                               | Sensor is not getting (enough) power  | Connect USB cable to power adapter        |
+{% if variant == 'production' %}|                   |                                       | Install a wide-angle lens                 | [link](SensorConfiguration/sensorLens.md)                 |
+{% endif %}| Sensor won't charge                    | Sensor is not getting (enough) power  | Connect USB cable to power adapter        |
 |                                                   |                                       | Try a different power adapter             |
 |                                                   | Broken cable                          | Replace cable                             |
 | Sensor can't connect to WiFi                      | Wrong credentials                     | Enter correct credentials                 |

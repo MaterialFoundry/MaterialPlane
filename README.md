@@ -2,27 +2,41 @@
 <br>
 You can currently place a pre-order for pre-build hardware from my webshop: <a href="https://www.materialfoundry.nl/">https://www.materialfoundry.nl/</a><br>
 
+### [Documentation](https://materialfoundry.github.io/MaterialPlane/)
+
 # Material Plane
 Material Plane is a <a href="https://foundryvtt.com/">Foundry VTT</a> module that allows physical minis to be tracked by Foundry when using a horizontally mounted TV. This allows you to bring the joy of physical minis into Foundry.<br>
 <br>
 There are currently 2 ways to track minis:<br>
-<b>Material Plane sensor</b><br>
+
+## Material Plane sensor
 The system consists of an IR sensor, and IR enabled mini bases. These bases contain IR LEDs that are tracked by the sensor. The sensor then relays this information to foundry over WiFi, where the information is interpreted as token movement.<br>
 You can use any TV, monitor or projector for this.<br>
-<b>Touch Screen</b><br>
-There is currently experimental support for touch screen devices. Either capacitive touch screens or normal TVs with an IR touch frame can work.<br>
+There is a pre-assembled and advanced version of the hardware for sale on the [Material Foundry webshop](https://www.materialfoundry.nl/), or it is possible to build DIY hardware.
+
+## Touch Screen
+There is currently experimental support for touch screen devices (broken in Foundry v11, though). Either capacitive touch screens or normal TVs with an IR touch frame can work.<br>
 <br>
-Please take a look at <a href="https://github.com/CDeenen/MaterialPlane/wiki/Mini-Tracking-Devices-Comparison">this</a> page for a comparison between the Material Plane sensor and touch screen.<br>
+Please take a look at [this](https://materialfoundry.github.io/MaterialPlane/hardwareComparison/) page for a comparison between the Material Plane sensor and touch screen.<br>
 
-[![Youtube Video](https://github.com/CDeenen/MaterialPlane/blob/master/Img/Other/YoutubeVid.png)](https://youtu.be/y_IouB-SDnk "FoundryVTT IR Mini Control")
+## Trailer
+<a href="https://www.youtube.com/watch?v=VVTjNrCfUwM">
+<img border="0" alt="trailer" src="img/Trailer Thumbnail.png" width="100%">
+</a>
 
-# Instructions and More Info
-<a href="https://github.com/CDeenen/MaterialPlane/wiki">Wiki</a><br>
-<a href="https://github.com/CDeenen/MaterialPlane/wiki/DIY-Hardware-Guide">DIY hardware guide</a><br>
-<a href="https://github.com/CDeenen/MaterialPlane/wiki/Beta-Hardware-Guide">Beta hardware guide</a><br>
-<a href="https://github.com/CDeenen/MaterialPlane/wiki/Touch-Screen-Guide">Touch screen guide</a><br>
-<a href="https://github.com/CDeenen/MaterialPlane_Hardware">Firmware and 3D models</a><br>
-<a href="https://github.com/CDeenen/MaterialPlane_Foundry">Foundry module repository</a>
+# Important Links
+* [Documentation](https://materialfoundry.github.io/MaterialPlane/)
+* [Issues/Feature requests](https://github.com/MaterialFoundry/MaterialPlane/issues)
+* [Main repository](https://github.com/materialfoundry/materialplane)
+* [Foundry module](https://github.com/MaterialFoundry/MaterialPlane_Foundry) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Foundry/releases))
+* [Sensor firmware](https://github.com/MaterialFoundry/MaterialPlane_Sensor) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Sensor/releases))
+* [Base firmware](https://github.com/MaterialFoundry/MaterialPlane_Base) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Base/releases))
+* [Pen firmware](https://github.com/MaterialFoundry/MaterialPlane_Pen) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Pen/releases))
+* [Material Companion](https://github.com/MaterialFoundry/MaterialCompanion) ([Releases](https://github.com/MaterialFoundry/MaterialCompanion/releases))
+* [Arduino core](https://github.com/MaterialFoundry/MaterialFoundry_Arduino) ([Releases](https://github.com/MaterialFoundry/MaterialFoundry_Arduino/releases))
+* [3D models](https://github.com/MaterialFoundry/MaterialPlane_Models)
+* [Discord server](https://discord.gg/3hd4G6TkmA)
+* [Patreon](https://www.patreon.com/materialfoundry)
 
 ## Software Versions & Module Incompatibilities
 <b>Foundry VTT:</b> v10 & v11<br>

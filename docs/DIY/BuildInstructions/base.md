@@ -1,9 +1,12 @@
-![Screenshot](../../img/hardware/DIY/MiniWithBase.jpg){align=right width=33%}
+# Base Build Instructions
+
+{% include 'diyDisclaimer.md' %}
 
 This page discusses the fabrication of the DIY bases.<br>
 Discussed on this page are the required tools, materials and parts you need, a sourcing guide for 3D prints and electrical components, and the complete build instructions.
 
 # Requirements
+![Screenshot](../../img/hardware/DIY/MiniWithBase.jpg){align=right width=33%}
 
 ## Required Tools
 
@@ -15,7 +18,7 @@ Discussed on this page are the required tools, materials and parts you need, a s
 
 ## Bill of Materials
 
-* 3D printed parts (see below)
+* [3D printed parts](https://github.com/MaterialFoundry/MaterialPlane_Models) (see below)
 * 1x 3mm infrared LED (940nm)
 * 1x Microswitch
 * 1x CR2032 battery
@@ -25,7 +28,7 @@ Discussed on this page are the required tools, materials and parts you need, a s
 
 #### 3D Prints
 
-To build the base you will to print the base enclosure. There are currently 2 variants:
+To build the base you will to print the base enclosure, which you can download [here](https://github.com/MaterialFoundry/MaterialPlane_Models). There are currently 2 variants:
 
 * Normal: Has a cavity into which the round base of a mini can fit
 * Flat: Has a flat top (no cavity)

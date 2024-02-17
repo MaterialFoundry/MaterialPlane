@@ -8,6 +8,6 @@ Otherwise, you could make use of the VESA attachment points (assuming your displ
 
 ## Display Enclosure
 A display enclosure is a, generally wooden, enclosure into which a display is mounted.<br>
-The advantage of
+The advantage of an enclosure is that it look prettier, and offers better protection
 
 ## Display Table

@@ -1,1 +1,3 @@
-Nothing here yet, sorry :(.
+{% set variant = 'diy' %}
+
+{% include 'troubleshooting.md' %}

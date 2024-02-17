@@ -2,14 +2,12 @@
 
 Welcome to the Material Plane documentation.
 
-<b>This documentation is still a work in progress!</b>
-
 Click the links below or at the top of the page to navigate the documentation:
 
 * [Production Hardware](Production/gettingStarted.md)
 * [DIY Hardware](DIY/gettingStarted.md)
 * [Touch](Touch/gettingStarted.md)
-* [Display Considerations](DisplayConsiderations/considerations.md)
+* [Display Considerations](DisplayConsiderations/type.md)
 * [Hardware Comparison](hardwareComparison.md)
 * [FAQ](faq.md)
 
@@ -32,6 +30,20 @@ Please take a look at [this](hardwareComparison.md) page for a comparison betwee
 <a href="https://www.youtube.com/watch?v=VVTjNrCfUwM">
 <img border="0" alt="trailer" src="img/Trailer Thumbnail.png" width="100%">
 </a>
+
+## Important Links
+
+* [Issues/Feature requests](https://github.com/MaterialFoundry/MaterialPlane/issues)
+* [Main repository](https://github.com/materialfoundry/materialplane)
+* [Foundry module](https://github.com/MaterialFoundry/MaterialPlane_Foundry) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Foundry/releases))
+* [Sensor firmware](https://github.com/MaterialFoundry/MaterialPlane_Sensor) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Sensor/releases))
+* [Base firmware](https://github.com/MaterialFoundry/MaterialPlane_Base) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Base/releases))
+* [Pen firmware](https://github.com/MaterialFoundry/MaterialPlane_Pen) ([Releases](https://github.com/MaterialFoundry/MaterialPlane_Pen/releases))
+* [Material Companion](https://github.com/MaterialFoundry/MaterialCompanion) ([Releases](https://github.com/MaterialFoundry/MaterialCompanion/releases))
+* [Arduino core](https://github.com/MaterialFoundry/MaterialFoundry_Arduino) ([Releases](https://github.com/MaterialFoundry/MaterialFoundry_Arduino/releases))
+* [3D models](https://github.com/MaterialFoundry/MaterialPlane_Models)
+* [Discord server](https://discord.gg/3hd4G6TkmA)
+* [Patreon](https://www.patreon.com/materialfoundry)
 
 ## Software Versions & Module Incompatibilities
 <b>Foundry VTT:</b> v10 & v11<br>

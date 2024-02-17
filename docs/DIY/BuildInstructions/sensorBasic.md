@@ -1,3 +1,7 @@
+# Basic Sensor Build Instructions
+
+{% include 'diyDisclaimer.md' %}
+
 This page discusses the fabrication of the basic DIY sensor. If you are not sure whether you want to build the full or basic sensor, please head over to the [hardware overview](../hardwareOverview.md).<br>
 Discussed on this page are the required tools, materials and parts you need and the build instructions.
 

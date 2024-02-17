@@ -69,9 +69,8 @@ nav:
     #- Usage: Touch/usage.md
     #- Troubleshooting: Touch/troubleshooting.md
   - Display Considerations:
-    - Display Considerations: DisplayConsiderations/considerations.md
     - Display Type: DisplayConsiderations/type.md
-    - Mounting: DisplayConsiderations/mounting.md
+    #- Mounting: DisplayConsiderations/mounting.md
     - Protection: DisplayConsiderations/protection.md
   - Hardware Comparison: hardwareComparison.md
   - FAQ: faq.md

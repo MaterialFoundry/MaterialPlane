@@ -1,9 +1,12 @@
-![Screenshot](../../img/hardware/DIY/Sensor.jpg){align=right width=33%}
+# Full Sensor Build Instructions
+
+{% include 'diyDisclaimer.md' %}
 
 This page discusses the fabrication of the full DIY sensor. If you are not sure whether you want to build the full or basic sensor, please head over to the [hardware overview](../hardwareOverview.md).<br>
 Discussed on this page are the required tools, materials and parts you need, a sourcing guide for 3D prints and electrical components, and the complete build instructions.
 
 ## Before You Get Started
+![Screenshot](../../img/hardware/DIY/Sensor.jpg){align=right width=33%}
 The full sensor build requires one of the following ESP32 boards:
 
 * TinyPico V1 or V2 (with micro-USB port, discontinued)
@@ -29,7 +32,7 @@ There are variants of these board with no on-board antenna, <b>do not get one of
 
 ### Bill of Materials
 
-* 3D printed parts (see below)
+* [3D printed parts](https://github.com/MaterialFoundry/MaterialPlane_Models) (see below)
 * A TinyPICO V1, V2 or V3, or a TinyS3
 * DFRobot SEN0158
 * 2x 5mm Red/Green or RGB <b>common cathode</b> LED
@@ -46,7 +49,7 @@ There are variants of these board with no on-board antenna, <b>do not get one of
 
 #### 3D Prints
 
-To build the sensor you will need one of each of the following parts (only the 'Sensor Main Body' is different):
+To build the sensor you will need one of each of the following parts (only the 'Sensor Main Body' is different), which you can download [here](https://github.com/MaterialFoundry/MaterialPlane_Models):
 
 |Part| TinyPICO V1/V2 | TinyPICO V3 | TinyS3 |
 |----|----------------|-------------|--------|

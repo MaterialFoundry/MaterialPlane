@@ -44,22 +44,44 @@ The direct connection is preferable, but not always possible. For example, if yo
 This is where Material Companion comes into play: it connects to the client from the computer, which is allowed for secured servers. Material Companion can then connect to the sensor and pass all the data through.
 
 #### Direct Connection
-![Screenshot](../../img/foundry/Foundry_Module_Connection.png){align=right width=50%}
 
 It is assumed that your sensor is already [connected to your WiFi network](../SensorConfiguration/sensorConnecting.md).
 
-For a direction connection between the sensor and client, you will need to open the [Material Plane Configuration](foundryConfig.md) and head over to the 'Connection' tab. Here, set the 'Connection Mode' to 'Connect Directly to the Sensor'.<br>
-Below that, in the 'Sensor Module IP Address', fill in the sensor IP and port. By default, this is 'materialsensor.local:3000'. If this doesn't work, try figuring out the [correct sensor address](../SensorConfiguration/sensorConnecting.md#sensor-address). 
+1. ![Screenshot](../../img/foundry/Foundry_Module_Connection.png){align=right width=50%}Make sure the sensor is switched on.
+2. Open the [Material Plane Configuration](foundryConfig.md).
+3. Head over to the 'Connection' tab. 
+4. Set the 'Connection Mode' to 'Connect Directly to the Sensor'.
+5. In the 'Sensor Module IP Address', fill in the sensor address/IP and port. 
+    By default, this is 'materialsensor.local:3000'. If this doesn't work, try figuring out the [correct sensor address](../SensorConfiguration/sensorConnecting.md#sensor-address). 
+6. Close the configuration screen, the client should refresh, if not, perform a manual refresh (press F5).
+7. If all goes well, you should see the 'Connected to sensor' popup message in Foundry. It can take a few seconds for this to appear.
+
+![Screenshot](../../img/foundry/Foundry_Sensor_Connected_Popup.png)
 
 #### Connection Through Material Companion
-![Screenshot](../../img/foundry/Foundry_Module_Connection_MC.png){align=right width=50%}
 
 It is assumed that your sensor is already [connected to your WiFi network](../SensorConfiguration/sensorConnecting.md).
 
-Make sure [Material Companion](https://github.com/MaterialFoundry/MaterialCompanion/wiki) is running on the same computer as the client. If both the display client and gamemaster client need to connect to the sensor, make sure Material Companion is running on both computers.
+1. ![Screenshot](../../img/foundry/Foundry_Module_Connection_MC.png){align=right width=50%}Start [Material Companion](https://github.com/MaterialFoundry/MaterialCompanion/wiki).
+2. Open the [Material Plane Configuration](foundryConfig.md).
+3. Gead over to the 'Connection' tab.
+4. Set the 'Connection Mode' to 'Connect Through Material Companion'.
+5. In the 'Material Companion IP Address', fill in the Material Companion IP and port. By default, this is 'localhost:3001'.
+6. Close the configuration screen, the client should refresh, if not, perform a manual refresh (press F5).
+7. If all goes well, you should see the 'Connected to Material Companion' popup message in Foundry. It can take a few seconds for this to appear.
+![Screenshot](../../img/foundry/Foundry_MC_Connected_Popup.png)
+8. ![Screenshot](../../img/materialCompanion/MaterialCompanion_Connect_Tab.png){align=right width=50%}In Material Companion, head over to the 'Material Plane' tab.
+9. You should see a green tick next to 'Material Plane Connected".
+10. If the 'Material Plane Sensor Connected' tick is green, the sensor is already connected and you are done.
+11. Otherwise, in the 'Sensor Address', fill in the sensor address/IP and port. 
+    By default, this is 'materialsensor.local:3000'. If this doesn't work, try figuring out the [correct sensor address](../SensorConfiguration/sensorConnecting.md#sensor-address).
+12. Press the 'Connect' button and wait a few seconds, hopefully the 'Material Plane Sensor Connected' tick turns green.
 
-To configure the connection, you will need to open the [Material Plane Configuration](foundryConfig.md) and head over to the 'Connection' tab. Here, set the 'Connection Mode' to 'Connect Through Material Companion'.<br>
-Below that, in the 'Material Companion IP Address', fill in the Material Companion IP and port. By default, this is 'localhost:3001'.
+There are 3 different connection events which will decide when Material Companion will attempt to connect to the sensor:
+
+* <b>When module is connected</b>: Material Companion will attempt to connect to the sensor when the module connects to Material Companion.
+* <b>When Material Companion starts</b>: Material Companion will attempt to connect to the sensor when it starts, even if the module is not connected, or if Foundry is not running.
+* <b>Manually</b>: You have to press the 'Connect'/'Disconnect' button to have Material Companion either connect or disconnect.
 
 ## USB Connection to Foundry
 <b>Currently unsupported.</b>

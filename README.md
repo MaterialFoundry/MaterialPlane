@@ -20,9 +20,7 @@ There is currently experimental support for touch screen devices (broken in Foun
 Please take a look at [this](https://materialfoundry.github.io/MaterialPlane/hardwareComparison/) page for a comparison between the Material Plane sensor and touch screen.<br>
 
 ## Trailer
-<a href="https://www.youtube.com/watch?v=VVTjNrCfUwM">
-<img border="0" alt="trailer" src="img/Trailer Thumbnail.png" width="100%">
-</a>
+[![Youtube Video](https://raw.githubusercontent.com/MaterialFoundry/MaterialPlane/master/docs/img/Trailer%20Thumbnail.png)](https://www.youtube.com/watch?v=VVTjNrCfUwM "Trailer")
 
 # Important Links
 * [Documentation](https://materialfoundry.github.io/MaterialPlane/)

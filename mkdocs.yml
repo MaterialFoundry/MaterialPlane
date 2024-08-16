@@ -64,9 +64,14 @@ nav:
     - Troubleshooting: DIY/troubleshooting.md
   - Touch:
     - Getting Started: Touch/gettingStarted.md
-    #- Requirements: Touch/requirements.md
-    #- Foundry Configuration: Touch/foundryConfig.md
-    #- Usage: Touch/usage.md
+    - Requirements: Touch/requirements.md
+    - Limitations: Touch/limitations.md
+    - VTT Configuration:
+      - Foundry VTT:
+        - Installing the Module: Touch/Foundry/foundryInstall.md
+        - Foundry Setup: Touch/Foundry/foundrySetup.md
+        - Module Configuration: Touch/Foundry/foundryConfig.md
+    - Usage: Touch/usage.md
     #- Troubleshooting: Touch/troubleshooting.md
   - Display Considerations:
     - Display Type: DisplayConsiderations/type.md

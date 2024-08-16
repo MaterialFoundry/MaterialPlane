@@ -6,15 +6,14 @@ The table of contents on the left is ordered in a way that you should start from
 
 1. [Make sure you know what the requirements are for using Material Plane](requirements.md)
 2. [Figure out what hardware you need](HardwareOverview/sensor.md)
-4. [Order the hardware](https://www.materialfoundry.nl/)
-5. Wait way too long for the hardware to arrive :')
-6. [Update the sensor firmware](Updating/sensorUpdating.md)
-7. [Figure out the optimal sensor mounting method and position](SensorPositioning/sensorMounting.md)
-8. [Connect the sensor to your WiFi network](SensorConfiguration/sensorConnecting.md)
-9. [Configure the sensor](SensorConfiguration/sensorSettings.md)
-10. [Install and configure the VTT module](Foundry/foundryInstall.md)
-11. [Calibrate the sensor](calibration.md)
-12. [Learn how to properly use the module](Usage/bases.md)
+3. [Order the hardware](https://www.materialfoundry.nl/)
+4. [Update the sensor firmware](Updating/sensorUpdating.md)
+5. [Figure out the optimal sensor mounting method and position](SensorPositioning/sensorMounting.md)
+6. [Connect the sensor to your WiFi network](SensorConfiguration/sensorConnecting.md)
+7. [Configure the sensor](SensorConfiguration/sensorSettings.md)
+8. [Install and configure the VTT module](Foundry/foundryInstall.md)
+9. [Calibrate the sensor](calibration.md)
+10. [Learn how to properly use the module](Usage/bases.md)
 
 Please check the [troubleshooting](troubleshooting.md) page if you run into any issues.
 

@@ -1,4 +1,8 @@
+{%set variant = 'production' %}
+
 {% include 'foundryConfig-general.md' %}
+
+{% include 'foundryConfig-control.md' %}
 
 {% include 'foundryConfig-sensor.md' %}
 

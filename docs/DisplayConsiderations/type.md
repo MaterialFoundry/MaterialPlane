@@ -24,7 +24,7 @@ Quantum dot (QLED) displays tend to be brighter than OLED, similar to LCD displa
 As mentioned above, plasma displays can emit infrared noise, so should be avoided, if possible. They can have great contrast ratios and wide viewing angles. However, they can suffer from screen burn-in and image retention issues on static images (such as battle maps). They require a lot more power than modern displays, which might cause overheating issues when laying the display flat.
 
 ## LCD Displays with CCFL backlight
-Similar to plasma displays, LCD displays with CCFL backlight can emit infrared noise, so should be avoided, if possible. They will also more power than modern displays, which can cause overheating issues.
+Similar to plasma displays, LCD displays with CCFL backlight can emit infrared noise, so should be avoided, if possible. They will also consume more power than modern displays, which can cause overheating issues.
 In this category fall mostly older LCD displays, since LED backlights have replaced CCFL in practically all modern TVs.
 
 The actual LCD technology is similar to LED displays, so the same considerations regarding display technology apply.

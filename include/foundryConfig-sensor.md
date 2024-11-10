@@ -2,7 +2,7 @@
 ![Screenshot](../../img/foundry/Foundry_Module_Connection.png){align=right width=50%}
 This tab allows you to configure how the sensor will connect to Foundry.
 
-Depending on your setup, you will either connect the sensor and Foundry directly, or through Material Companion. Please refer to the [Sensor Configuration](../SensorConfiguration/sensorConnecting.md#connecting-to-the-sensor) page for more info on the connection methods and why you would choose one or the other.
+Depending on your setup, you will either connect the sensor and Foundry directly, or through Material Companion. Please refer to the [Sensor Configuration](../SensorConfiguration/sensorConnecting.md) page for more info on the connection methods and why you would choose one or the other.
 
 * <b>Connection Mode:</b> Sets how Foundry will try to connect to the sensor:
     * <i>Connect Directly to the Sensor:</i> Foundry will attempt to connect directly to the sensor

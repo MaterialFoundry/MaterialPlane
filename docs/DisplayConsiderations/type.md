@@ -1,9 +1,4 @@
-# Display Selection
-There are multiple factors that go into display selection. The most important one is probably the viewing angle, since you and your players will be sitting around the display, viewing it from a large angle. Besides that, issues related to screen burn-in and image retention should be considered, since mostly static images will be displayed.
 
-Below is a comparison between different display types, but it should be noted that there will be a lot of variance between different displays of the same type. For example, on paper, a TN display should not be great for this application due to their bad viewing angles, however, some higher quality TN displays can offer great viewing angles.
-
-This should only function as a guideline, the best thing to do is to go to a local electronics store and take a look at the displays in person. Walk around them and view them from all angles, and see how the image changes and how different TVs perform, especially from up-close.
 
 ## LCD Displays with LED backlight
 LCD displays with LED backlights are by far the most common and most budget-friendly displays. They generally make a great choice for tabletop applications. There are many differences between different LCD displays, mainly determined by their underlying display technology. The most common are TN, VA and IPS. Not all manufacturers advertise which technology is used in their display, so it might be difficult to choose one based on that, but here are some important differences between the 3:

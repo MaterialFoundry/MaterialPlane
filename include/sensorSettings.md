@@ -1,4 +1,4 @@
-This page discusses all settings related to how the sensor detects bases and handles the data related to this.These settings can be accessed through the Foundry [Module Configuration screen](../Foundry/foundryConfig.md#module-configuration) or the [webserver](webserver.md).
+This page discusses all settings related to how the sensor detects bases and handles the data related to this.These settings can be accessed through the Foundry [Module Configuration screen](../Foundry/foundryConfig.md) or the [webserver](webserver.md).
 
 The tab is divided into multiple sections which can be expanded or collapsed.
 
@@ -39,13 +39,13 @@ The bottom part gives data transmitted by a detected base or pen (production sen
 
 The exposure section can be used to configure things related to the detection of bases.
 
-There are 2 brightness settings ('Brightness' and 'Minimum Brightness') and an 'Auto Exposure' button.<br>
+There are 2 brightness related settings ('Sensitivity' and 'Minimum Brightness') and an 'Auto Exposure' button.<br>
 You should try the auto exposure first:
 
 1. Grab a base and activate it, make sure it stays activated during the auto exposure process. Make sure only one base is visible to the sensor. 
 2. Hold the base near the edge of the display
 3. Press the 'Auto Exposure' button
-4. The sensor will increase the brightness until it detects the base and the brightness is close to 255
+4. The sensor will increase the sensitivity until it detects the base and its detected brightness is close to 255
 
 {% if variant == 'production' %}
 <b>Tip</b>: You can keep the base activated without touching it: Touch the side of the base very short, wait for the red LED to switch off, touch the side of the base again. Repeat this 5 times and the red LED will start blinking. The base is now in 'always on' mode. You can switch it back by either switching the base off and on, or by doing the same procedure again.
@@ -54,11 +54,11 @@ You should try the auto exposure first:
 If the auto exposure did not work:
 
 1. Set 'Minimum Brightness' to around 100
-2. Slide 'Brightness' all the way down and slowly increase it until the base or pen is detected
+2. Slide 'Sensitivity' all the way down and slowly increase it until the base or pen is detected
 3. Keep increasing it until the maximum brightness is between 220 and 255
 4. If the base or pen is not detected, try increasing the minimum brightness
 5. If the sensor detects more points, increase the minimum brightness
-6. In tricky environments (for example with a lot of stray infrared light) you might have to find a balance between the 'Brightness' and 'Minimum Brightness' slider
+6. In tricky environments (for example with a lot of stray infrared light) you might have to find a balance between the 'Sensitivity' and 'Minimum Brightness' slider
 7. Move the base or pen across your display and make sure that the maximum brightness stays well above 'Minimum Brightness'
 
 <b>Update Rate:</b><br>
@@ -68,6 +68,12 @@ Set it as high as you system will allow.
 <b>Averaging:</b><br>
 Averaging will smooth the position data of the bases. The average count equals how many readings are taken and averaged, where a higher value results in a very smooth but less responsive movement, while lower values result in more jittery but more responsive movement.<br>
 Try different values to find one that fits best for you.
+
+<div class="warning" style='background-color:#ab4a00; border-radius: 4px; padding:0.7em; color:black; text-align: center;'><span>
+After finding a setting that results in a base being detected, you will want to make sure that bases can be detected across the entire display. In some areas of the display (usually near the edges and corners) it will be more difficult for the sensor to detect bases because of the angle between the bases and the sensor. You might have to increase 'Sensitivity' or decrease 'Minimum Brightness'.<br>
+<br>
+You may also find that you have to slightly reposition the sensor for it to detect the entire display. You might have to adjust the exposure settings afterwards.
+</span></div>
 
 ## Transform
 ![Screenshot](../../img/webserver/Webserver_Transform.png){align=right width=33%}

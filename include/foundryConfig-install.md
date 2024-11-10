@@ -1,7 +1,11 @@
 ## Installing the Module
 To use Material Plane, you must install the module. There are several ways to do this:
 
-<b>Built-In Module Browser</b><br>
+<div class="warning" style='background-color:#ab4a00; border-radius: 4px; padding:0.7em; color:black; text-align: center;'><span>
+Please note that you will only need to install the module using <b>one</b> of the following methods (preferably the built-in module browser).
+</span></div>
+
+<b>Option 1: Built-In Module Browser</b><br>
 The easiest way to install modules is using the built-in module browser.
 
 1. Start Foundry VTT and make sure you're in the 'Setup' screen
@@ -16,7 +20,7 @@ The easiest way to install modules is using the built-in module browser.
     ![Screenshot](../../img/foundry/Foundry_Module_Install.png){width=50%}
 
 
-<b>Manifest URL</b><br>
+<b>Option 2: Manifest URL</b><br>
 You can use the module's manifest URL to install the module. The main reason for this is to install a specific version of the module.
 
 You can find the manifest URL for all available versions [here](https://foundryvtt.com/packages/MaterialPlane).<br>
@@ -35,7 +39,7 @@ Alternatively, you could use this manifest URL which always points to the latest
 
     ![Screenshot](../../img/foundry/Foundry_Module_Install_Manifest.png){width=50%}
 
-<b>Manual</b><br>
+<b>Option 3: Manual</b><br>
 The last option is a manual installation
 
 1. Download the 'module.zip' file from [GitHub](https://github.com/MaterialFoundry/MaterialPlane_Foundry/releases)

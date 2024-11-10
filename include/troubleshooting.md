@@ -36,7 +36,7 @@ Similarly, if you find a row that does not mention a possible cause, it relates 
 ## Base
 | Issue                                         | Possible cause                                    | Possible solution                                             | More info                                                 |
 |-----------------------------------------------|---------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------|
-| Base won't update                             | Both the pen and base are connected to the dock   | Remove one of them                                            | [link](Updating/basePenUpdating.md#base--pen)    |
+| Base won't update                             | Both the pen and base are connected to the dock   | Remove one of them                                            | [link](Updating/basePenUpdating.md)    |
 |                                               | Faulty USB-C cable or USB port                    | Try a different cable or USB port
 |                                               | Incorrect or no USB drivers installed             | Install the drivers                                           | [link](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all#drivers-if-you-need-them) |
 | Base won't charge                             | Dock is not getting power                         | Apply power to the dock                                       | 
@@ -53,7 +53,7 @@ Similarly, if you find a row that does not mention a possible cause, it relates 
 ## Pen
 | Issue                 | Possible cause                                    | Possible solution                                             | More info                                             |
 |-----------------------|---------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------|
-| Pen won't update      | Both the pen and base are connected to the dock   | Remove one of them                                            | [link](Updating/basePenUpdating.md#base--pen)    |
+| Pen won't update      | Both the pen and base are connected to the dock   | Remove one of them                                            | [link](Updating/basePenUpdating.md)    |
 |                       | Faulty USB-C cable or USB port                    | Try a different cable or USB port                             |
 |                       | Incorrect or no USB drivers installed             | Install the drivers                                           | [link](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all#drivers-if-you-need-them) |
 | Pen/ won't charge     | Dock is not getting power                         | Apply power to the dock                                       |   

@@ -8,6 +8,9 @@ Otherwise, you could make use of the VESA attachment points (assuming your displ
 
 ## Display Enclosure
 A display enclosure is a, generally wooden, enclosure into which a display is mounted.<br>
-The advantage of an enclosure is that it look prettier, and offers better protection
+The advantage of an enclosure is that it look prettier, and offers better protection.<br>
+Displays enclosures can be bought, or you could build your own. You can google terms like "RPG TV enclosure" or "RPG TV case" for shops, inspiration or build plans.
 
 ## Display Table
+The last, and according to many people, ultimate option, is a dedicated display table. This is a table with a built-in display.<br>
+These can offer better protection and look better than enclosures. Additionally, your setup is pretty much always ready to go. Many of these tables have built-in accessories, such as dice trays or dice towers, and many have a cover that allow the table to be used as a normal table. However, these tables are generally very expensive, or take a lot of work to build. You can google terms like "RPG TV table" for shops, inspiration or build plans.

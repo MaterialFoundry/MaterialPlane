@@ -1,9 +1,9 @@
 The sensor can be updated in 4 ways:
 
-* Using Material Companion over WiFi
-* Using Material Companion with a USB cable
-* Using the sensor webserver
-* Using the Arduino IDE (USB or WiFi)
+* Using [Material Companion over WiFi](#material-companion-wifi)
+* Using [Material Companion with a USB cable](#material-companion-usb)
+* Using the [sensor webserver](#webserver)
+* Using the [Arduino IDE](#arduino-ide) (USB or WiFi)
 
 {% if variant == 'diy' %}<b>The first time uploading the firmware to the sensor, you must upload using a USB cable (either using Material Companion or the Arduino IDE).</b>{% endif %}
 
@@ -13,6 +13,20 @@ The sensor has 2 different things that require separate updates:
 * <b>Webserver:</b> This is the code that is responsible for the webserver
 
 These may or may not receive updates at the same time. Depending on the update method you will either have to update these separately or they can be updated at the same time.
+
+### Finding the Current Version
+You can find the versions of the firmware and webserver that are installed on your sensor in one of the following ways:
+
+* <b>Using Material Companion:</b> The versions can be reported in the [Sensor](https://materialfoundry.github.io/MaterialCompanion/materialPlane/#sensor) tab.
+* <b>Using the Sensor's Webserver:</b> The versions will be displayed on the [Status](../SensorConfiguration/webserver.md#status-tab) tab.
+* <b>Using the Module's Downloads Tab:</b> The versions will be displayed in 'Current' column on the [Downloads](../Foundry/foundryConfig.md#downloads) tab of the Material Plane configuration screen.
+
+### Finding the Latest Version
+You can find the latest versions of the firmware and webserver in one of the following ways:
+
+* <b>Using Material Companion:</b> The latest versions are displayed in the 'Update' section in the [Sensor](https://materialfoundry.github.io/MaterialCompanion/materialPlane/#sensor) tab.
+* <b>Using the Module's Downloads Tab:</b> The latest versions will be displayed in 'Latest' column on the [Downloads](../Foundry/foundryConfig.md#downloads) tab of the Material Plane configuration screen.
+* <b>Using GitHub's Releases Page:</b> The [Releases Page](https://github.com/MaterialFoundry/MaterialPlane_Sensor/releases) on GitHub will list all the latest releases.
 
 ## Material Companion (WiFi)
 
